@@ -10,19 +10,97 @@
 </head>
 <body>
 
+<!-- Webpage Header -->
+
 <div class="header-section">
     <div class="container text-center">
+    <div class="container" style="max-width: 800px; margin: 0 auto;">
     </br>
     <a href="Index.html"><img src="images/refresh.png" style="width:50px;height:37px;"></a></br>
     </br>
-    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from Different Locations</span></b></h5>
+    <img src="images/title.png" style="width:789px;height:76.5px;"></a></br>
     </br>
-    <img src="images/newyork.png" style="width:402px;height:206px;"></a></br>
+    <img src="images/emulatelocation-1.png" style="width:789px;height:40px;"></a></br>
     </br>
-    <span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if you were searching from the specified location</span></br>
+    <a href="https://serpapi.com/playground" target="_blank"><img width="789" height="22" src="images/emulatelocation-2.png"/></a></br>
+    <a href="https://developers.google.com/custom-search/docs/json_api_reference" target="_blank"><img width="789" height="22" src="images/emulatelocation-3.png"/></a></br>
+    </br>
+    <img src="images/limitresultsbycountry-1.png" style="width:800px;height:40px;"></a></br>
+    </br>
+    <a href="https://developers.google.com/custom-search/docs/json_api_reference" target="_blank"><img width="800" height="22" src="images/limitresultsbycountry-2.png"/></a></br>
+    </br>
+
+<!--Canada (1) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    </br>
+    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from Canada</span></b></h5>
+    </br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from Canada</span></b></h6>
+    </br>
+    <img src="images/ca-1.png" style="width:402px;height:206px;"></a></br>
     </br>
     </div>
-    <div class="container" style="max-width: 800px; margin: 0 auto;">
+    <form>
+    <div class="form-group">
+    <label for="textInput33"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput33">
+    </div>
+    <p hidden><input id="RFC2396-33" name="RFC2396-33" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output33" onclick="URLEncode33(), getInputValue33()">Generate Link</button>
+    </form>
+                          
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink33">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard33()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+  
+    <hr/>
+
+<!--Canada (2) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from Canada</span></b></h6>
+    </br>
+    <img src="images/ca-2.png" style="width:402px;height:310px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput34"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput34">
+    </div>
+    <p hidden><input id="RFC2396-34" name="RFC2396-34" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output34" onclick="URLEncode34(), getInputValue34()">Generate Link</button>
+    </form>
+                          
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink34">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard34()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+
+    <hr/>
+
+<!-- United States (1) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    </br>
+    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from the United States</span></b></h5>
+    </br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from the United States</span></b></h6>
+    </br>
+    <img src="images/us-1.png" style="width:402px;height:206px;"></a></br>
+    </br>
+    </div>
     <form>
     <div class="form-group">
     <label for="textInput1"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
@@ -41,13 +119,15 @@
     </div>
 
     <hr/>
-    
+
+<!-- United States (2) -->
+
 <div class="header-section">
     <div class="container text-center">
-    <img src="images/usonly.png" style="width:402px;height:310px;"></a></br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from the United States</span></b></h6>
     </br>
-    <span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if you were searching from the specified location & limit search results to websites determined by Google to be from the United States</span></br>
-    </br>  
+    <img src="images/us-2.png" style="width:402px;height:310px;"></a></br>
+    </br>
     </div>
     <form>
     <div class="form-group">
@@ -60,20 +140,25 @@
     <div class="form-group">
     <button class="btn btn-primary" type="button" id="output2" onclick="URLEncode2(), getInputValue2()">Generate Link</button>
     </form>
-  
+    
     <div class="result-container mt-4">
     <p class="alert alert-success" id="finalLink2">Nothing to show</p>
     <input type="hidden" id="input">
     <button class="btn btn-outlined-primary" onclick="copyToClipboard2()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
     </div>
-
+  
     <hr/>
 
-  <div class="header-section">
+<!-- United Kingdom (1) -->
+
+<div class="header-section">
     <div class="container text-center">
-    <img src="images/london.png" style="width:402px;height:206px;"></a></br>
     </br>
-    <span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if you were searching from the specified location</span></br>
+    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from the United Kingdom</span></b></h5>
+    </br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from the United Kingdom</span></b></h6>
+    </br>
+    <img src="images/uk-1.png" style="width:402px;height:206px;"></a></br>
     </br>
     </div>
     <form>
@@ -94,12 +179,14 @@
     </div>
 
     <hr/>
-    
+
+<!-- United Kingdom (2) -->
+
 <div class="header-section">
     <div class="container text-center">
-    <img src="images/ukonly.png" style="width:402px;height:310px;"></a></br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from the United Kingdom</span></b></h6>
     </br>
-    <span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if you were searching from the specified location & limit search results to websites determined by Google to be from the United Kingdom</span></br>
+    <img src="images/uk-2.png" style="width:402px;height:310px;"></a></br>
     </br>
     </div>
     <form>
@@ -120,12 +207,17 @@
     </div>
 
     <hr/>
-    
+
+<!-- Germany (1) -->
+
 <div class="header-section">
     <div class="container text-center">
-    <img src="images/berlin.png" style="width:402px;height:206px;"></a></br>
     </br>
-    <span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if you were searching from the specified location</span></br>
+    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from Germany</span></b></h5>
+    </br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from Germany</span></b></h6>
+    </br>
+    <img src="images/de-1.png" style="width:402px;height:206px;"></a></br>
     </br>
     </div>
     <form>
@@ -146,12 +238,14 @@
     </div>
 
     <hr/>
-    
+
+<!-- Germany (2) -->
+
 <div class="header-section">
     <div class="container text-center">
-    <img src="images/deonly.png" style="width:402px;height:310px;"></a></br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from Germany</span></b></h6>
     </br>
-    <span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if you were searching from the specified location & limit search results to websites determined by Google to be from Germany</span></br>
+    <img src="images/de-2.png" style="width:402px;height:310px;"></a></br>
     </br>
     </div>
     <form>
@@ -165,71 +259,437 @@
     <button class="btn btn-primary" type="button" id="output6" onclick="URLEncode6(), getInputValue6()">Generate Link</button>
     </form>
           
-  <div class="result-container mt-4">
-  <p class="alert alert-success" id="finalLink6">Nothing to show</p>
-  <input type="hidden" id="input">
-  <button class="btn btn-outlined-primary" onclick="copyToClipboard6()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
-  </div>
-
-  <hr/>
-    
-  <div class="header-section">
-      <div class="container text-center">
-      <img src="images/paris.png" style="width:402px;height:206px;"></a></br>
-      </br>
-      <span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if you were searching from the specified location</span></br>
-      </br>
-      </div>
-      <form>
-      <div class="form-group">
-      <label for="textInput7"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
-      <input type="text" class="form-control" id="textInput7">
-      </div>
-      <p hidden><input id="RFC2396-7" name="RFC2396-7" type="CHECKBOX" checked="checked" /></p>
-      </div>
-      <div class="form-group">
-      <button class="btn btn-primary" type="button" id="output7" onclick="URLEncode7(), getInputValue7()">Generate Link</button>
-      </form>
-            
     <div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink6">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard6()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+
+    <hr/>
+
+<!-- France (1) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    </br>
+    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from France</span></b></h5>
+    </br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from France</span></b></h6>
+    </br>
+    <img src="images/fr-1.png" style="width:402px;height:206px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput7"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput7">
+    </div>
+    <p hidden><input id="RFC2396-7" name="RFC2396-7" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output7" onclick="URLEncode7(), getInputValue7()">Generate Link</button>
+    </form>
+            
+<div class="result-container mt-4">
     <p class="alert alert-success" id="finalLink7">Nothing to show</p>
     <input type="hidden" id="input">
     <button class="btn btn-outlined-primary" onclick="copyToClipboard7()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
     </div>
 
-  <hr/>
-    
-  <div class="header-section">
-      <div class="container text-center">
-      <img src="images/fronly.png" style="width:402px;height:310px;"></a></br>
-      </br>
-      <span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if you were searching from the specified location & limit search results to websites determined by Google to be from France</span></br>
-      </br>
-      </div>
-      <form>
-      <div class="form-group">
-      <label for="textInput8"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
-      <input type="text" class="form-control" id="textInput8">
-      </div>
-      <p hidden><input id="RFC2396-8" name="RFC2396-8" type="CHECKBOX" checked="checked" /></p>
-      </div>
-      <div class="form-group">
-      <button class="btn btn-primary" type="button" id="output8" onclick="URLEncode8(), getInputValue8()">Generate Link</button>
-      </form>
+    <hr/>
+
+<!-- France (2) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from France</span></b></h6>
+    </br>
+    <img src="images/fr-2.png" style="width:402px;height:310px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput8"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput8">
+    </div>
+    <p hidden><input id="RFC2396-8" name="RFC2396-8" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output8" onclick="URLEncode8(), getInputValue8()">Generate Link</button>
+    </form>
             
-    <div class="result-container mt-4">
+<div class="result-container mt-4">
     <p class="alert alert-success" id="finalLink8">Nothing to show</p>
     <input type="hidden" id="input">
     <button class="btn btn-outlined-primary" onclick="copyToClipboard8()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
     </div>
 
     <hr/>
-    
+
+<!-- Netherlands (1) -->
+
 <div class="header-section">
     <div class="container text-center">
-    <img src="images/tokyo.png" style="width:402px;height:206px;"></a></br>
     </br>
-    <span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if you were searching from the specified location</span></br>
+    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from Netherlands</span></b></h5>
+    </br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from Netherlands</span></b></h6>
+    </br>
+    <img src="images/nl-1.png" style="width:402px;height:206px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput55"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput55">
+    </div>
+    <p hidden><input id="RFC2396-55" name="RFC2396-55" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output55" onclick="URLEncode55(), getInputValue55()">Generate Link</button>
+    </form>
+                                              
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink55">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard55()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+                   
+    <hr/>
+
+<!-- Netherlands (2) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from Netherlands</span></b></h6>
+    </br>
+    <img src="images/nl-2.png" style="width:402px;height:310px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput56"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput56">
+    </div>
+    <p hidden><input id="RFC2396-56" name="RFC2396-56" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output56" onclick="URLEncode56(), getInputValue56()">Generate Link</button>
+    </form>
+                                              
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink56">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard56()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+                   
+    <hr/>
+
+<!-- Switzerland (1) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    </br>
+    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from Switzerland</span></b></h5>
+    </br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from Switzerland</span></b></h6>
+    </br>
+    <img src="images/ch-1.png" style="width:402px;height:206px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput53"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput53">
+    </div>
+    <p hidden><input id="RFC2396-53" name="RFC2396-53" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output53" onclick="URLEncode53(), getInputValue53()">Generate Link</button>
+    </form>
+                                            
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink53">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard53()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+                 
+    <hr/>
+
+<!-- Switzerland (2) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from Switzerland</span></b></h6>
+    </br>
+    <img src="images/ch-2.png" style="width:402px;height:310px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput54"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput54">
+    </div>
+    <p hidden><input id="RFC2396-54" name="RFC2396-54" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output54" onclick="URLEncode54(), getInputValue54()">Generate Link</button>
+    </form>
+                                            
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink54">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard54()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+                 
+    <hr/>
+
+<!-- Norway (1) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    </br>
+    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from Norway</span></b></h5>
+    </br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from Norway</span></b></h6>
+    </br>
+    <img src="images/no-1.png" style="width:402px;height:206px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput49"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput49">
+    </div>
+    <p hidden><input id="RFC2396-49" name="RFC2396-49" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output49" onclick="URLEncode49(), getInputValue49()">Generate Link</button>
+    </form>
+                                        
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink49">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard49()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+             
+    <hr/>
+
+<!-- Norway (2) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from Norway</span></b></h6>
+    </br>
+    <img src="images/no-2.png" style="width:402px;height:310px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput50"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput50">
+    </div>
+    <p hidden><input id="RFC2396-50" name="RFC2396-50" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output50" onclick="URLEncode50(), getInputValue50()">Generate Link</button>
+    </form>
+                                        
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink50">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard50()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+             
+    <hr/>
+
+<!-- Sweden (1) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    </br>
+    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from Sweden</span></b></h5>
+    </br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from Sweden</span></b></h6>
+    </br>
+    <img src="images/se-1.png" style="width:402px;height:206px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput51"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput51">
+    </div>
+    <p hidden><input id="RFC2396-51" name="RFC2396-51" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output51" onclick="URLEncode51(), getInputValue51()">Generate Link</button>
+    </form>
+                                          
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink51">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard51()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+               
+    <hr/>
+
+<!-- Sweden (2) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from Sweden</span></b></h6>
+    </br>
+    <img src="images/se-2.png" style="width:402px;height:310px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput52"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput52">
+    </div>
+    <p hidden><input id="RFC2396-52" name="RFC2396-52" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output52" onclick="URLEncode52(), getInputValue52()">Generate Link</button>
+    </form>
+                                          
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink52">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard52()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+               
+    <hr/>
+
+<!-- Russia (1) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    </br>
+    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from Russia</span></b></h5>
+    </br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from Russia</span></b></h6>
+    </br>
+    <img src="images/ru-1.png" style="width:402px;height:206px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput25"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput25">
+    </div>
+    <p hidden><input id="RFC2396-25" name="RFC2396-25" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output25" onclick="URLEncode25(), getInputValue25()">Generate Link</button>
+    </form>
+                        
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink25">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard25()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+      
+    <hr/>
+
+<!-- Russia (2) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from Russia</span></b></h6>
+    </br>
+    <img src="images/ru-2.png" style="width:402px;height:310px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput26"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput26">
+    </div>
+    <p hidden><input id="RFC2396-26" name="RFC2396-26" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output26" onclick="URLEncode26(), getInputValue26()">Generate Link</button>
+    </form>
+                      
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink26">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard26()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+
+    <hr/>
+
+<!-- Turkey (1) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    </br>
+    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from Turkey</span></b></h5>
+    </br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from Turkey</span></b></h6>
+    </br>
+    <img src="images/tr-1.png" style="width:402px;height:206px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput19"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput19">
+    </div>
+    <p hidden><input id="RFC2396-19" name="RFC2396-19" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output19" onclick="URLEncode19(), getInputValue19()">Generate Link</button>
+    </form>
+                  
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink19">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard19()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+
+    <hr/>
+
+<!-- Turkey (2) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from Turkey</span></b></h6>
+    </br>
+    <img src="images/tr-2.png" style="width:402px;height:310px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput20"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput20">
+    </div>
+    <p hidden><input id="RFC2396-20" name="RFC2396-20" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output20" onclick="URLEncode20(), getInputValue20()">Generate Link</button>
+    </form>
+                
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink20">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard20()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+
+    <hr/>
+
+<!-- Japan (1) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    </br>
+    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from Japan</span></b></h5>
+    </br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from Japan</span></b></h6>
+    </br>
+    <img src="images/jp-1.png" style="width:402px;height:206px;"></a></br>
     </br>
     </div>
     <form>
@@ -250,12 +710,14 @@
     </div>
 
     <hr/>
-    
+
+<!-- Japan (2) -->
+
 <div class="header-section">
     <div class="container text-center">
-    <img src="images/jponly.png" style="width:402px;height:310px;"></a></br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from Japan</span></b></h6>
     </br>
-    <span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if you were searching from the specified location & limit search results to websites determined by Google to be from Japan</span></br>
+    <img src="images/jp-2.png" style="width:402px;height:310px;"></a></br>
     </br>
     </div>
     <form>
@@ -276,12 +738,17 @@
     </div>
 
     <hr/>
-    
+
+<!-- South Korea (1) -->
+
 <div class="header-section">
     <div class="container text-center">
-    <img src="images/seoul.png" style="width:402px;height:206px;"></a></br>
     </br>
-    <span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if you were searching from the specified location</span></br>
+    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from South Korea</span></b></h5>
+    </br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from South Korea</span></b></h6>
+    </br>
+    <img src="images/kr-1.png" style="width:402px;height:206px;"></a></br>
     </br>
     </div>
     <form>
@@ -302,12 +769,14 @@
     </div>
 
     <hr/>
-    
+
+<!-- South Korea (2) -->
+
 <div class="header-section">
     <div class="container text-center">
-    <img src="images/kronly.png" style="width:402px;height:310px;"></a></br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from South Korea</span></b></h6>
     </br>
-    <span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if you were searching from the specified location & limit search results to websites determined by Google to be from South Korea</span></br>
+    <img src="images/kr-2.png" style="width:402px;height:310px;"></a></br>
     </br>
     </div>
     <form>
@@ -328,12 +797,76 @@
     </div>
 
     <hr/>
-    
+
+<!-- Hong Kong (1) -->
+
 <div class="header-section">
     <div class="container text-center">
-    <img src="images/singapore.png" style="width:402px;height:206px;"></a></br>
     </br>
-    <span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if you were searching from the specified location</span></br>
+    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from Hong Kong</span></b></h5>
+    </br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from Hong Kong</span></b></h6>
+    </br>
+    <img src="images/hk-1.png" style="width:402px;height:206px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput29"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput29">
+    </div>
+    <p hidden><input id="RFC2396-29" name="RFC2396-29" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output29" onclick="URLEncode29(), getInputValue29()">Generate Link</button>
+    </form>
+                      
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink29">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard29()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+
+    <hr/>
+
+<!-- Hong Kong (2) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from Hong Kong</span></b></h6>
+    </br>
+    <img src="images/hk-2.png" style="width:402px;height:310px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput30"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput30">
+    </div>
+    <p hidden><input id="RFC2396-30" name="RFC2396-30" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output30" onclick="URLEncode30(), getInputValue30()">Generate Link</button>
+    </form>
+                      
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink30">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard30()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+
+    <hr/>
+
+<!-- Singapore (1) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    </br>
+    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from Singapore</span></b></h5>
+    </br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from Singapore</span></b></h6>
+    </br>
+    <img src="images/sg-1.png" style="width:402px;height:206px;"></a></br>
     </br>
     </div>
     <form>
@@ -354,12 +887,14 @@
     </div>
 
     <hr/>
-    
+
+<!-- Singapore (2) -->
+
 <div class="header-section">
     <div class="container text-center">
-    <img src="images/sgonly.png" style="width:402px;height:310px;"></a></br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from Singapore</span></b></h6>
     </br>
-    <span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if you were searching from the specified location & limit search results to websites determined by Google to be from Singapore</span></br>
+    <img src="images/sg-2.png" style="width:402px;height:310px;"></a></br>
     </br>
     </div>
     <form>
@@ -380,12 +915,76 @@
     </div>
 
     <hr/>
-    
+
+<!-- Australia (1) -->
+
 <div class="header-section">
     <div class="container text-center">
-    <img src="images/delhi.png" style="width:402px;height:206px;"></a></br>
     </br>
-    <span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if you were searching from the specified location</span></br>
+    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from Australia</span></b></h5>
+    </br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from Australia</span></b></h6>
+    </br>
+    <img src="images/au-1.png" style="width:402px;height:206px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput17"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput17">
+    </div>
+    <p hidden><input id="RFC2396-17" name="RFC2396-17" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output17" onclick="URLEncode17(), getInputValue17()">Generate Link</button>
+    </form>
+                  
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink17">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard17()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+
+    <hr/>
+
+<!-- Australia (2) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from Australia</span></b></h6>
+    </br>
+    <img src="images/au-2.png" style="width:402px;height:310px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput18"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput18">
+    </div>
+    <p hidden><input id="RFC2396-18" name="RFC2396-18" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output18" onclick="URLEncode18(), getInputValue18()">Generate Link</button>
+    </form>
+                
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink18">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard18()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+
+    <hr/>
+
+<!-- India (1) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    </br>
+    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from India</span></b></h5>
+    </br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from India</span></b></h6>
+    </br>
+    <img src="images/in-1.png" style="width:402px;height:206px;"></a></br>
     </br>
     </div>
     <form>
@@ -406,12 +1005,14 @@
     </div>
 
     <hr/>
-    
+
+<!-- India (2) -->
+
 <div class="header-section">
     <div class="container text-center">
-    <img src="images/inonly.png" style="width:402px;height:310px;"></a></br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from India</span></b></h6>
     </br>
-    <span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if you were searching from the specified location & limit search results to websites determined by Google to be from India</span></br>
+    <img src="images/in-2.png" style="width:402px;height:310px;"></a></br>
     </br>
     </div>
     <form>
@@ -431,7 +1032,719 @@
     <button class="btn btn-outlined-primary" onclick="copyToClipboard16()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
     </div>
 
+    <hr/>
+
+<!-- Pakistan (1) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    </br>
+    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from Pakistan</span></b></h5>
+    </br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from Pakistan</span></b></h6>
+    </br>
+    <img src="images/pk-1.png" style="width:402px;height:206px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput31"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput31">
+    </div>
+    <p hidden><input id="RFC2396-31" name="RFC2396-31" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output31" onclick="URLEncode31(), getInputValue31()">Generate Link</button>
+    </form>
+                      
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink31">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard31()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+
+    <hr/>
+
+<!-- Pakistan (2) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from Pakistan</span></b></h6>
+    </br>
+    <img src="images/pk-2.png" style="width:402px;height:310px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput32"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput32">
+    </div>
+    <p hidden><input id="RFC2396-32" name="RFC2396-32" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output32" onclick="URLEncode32(), getInputValue32()">Generate Link</button>
+    </form>
+                      
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink32">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard32()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+
+    <hr/>
+
+<!-- Indonesia (1) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    </br>
+    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from Indonesia</span></b></h5>
+    </br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from Indonesia</span></b></h6>
+    </br>
+    <img src="images/id-1.png" style="width:402px;height:206px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput21"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput21">
+    </div>
+    <p hidden><input id="RFC2396-21" name="RFC2396-21" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output21" onclick="URLEncode21(), getInputValue21()">Generate Link</button>
+    </form>
+                      
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink21">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard21()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+    
+    <hr/>
+
+<!-- Indonesia (2) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from Indonesia</span></b></h6>
+    </br>
+    <img src="images/id-2.png" style="width:402px;height:310px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput22"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput22">
+    </div>
+    <p hidden><input id="RFC2396-22" name="RFC2396-22" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output22" onclick="URLEncode22(), getInputValue22()">Generate Link</button>
+    </form>
+                    
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink22">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard22()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+  
+    <hr/>
+
+<!-- Malaysia (1) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    </br>
+    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from Malaysia</span></b></h5>
+    </br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from Malaysia</span></b></h6>
+    </br>
+    <img src="images/my-1.png" style="width:402px;height:206px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput39"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput39">
+    </div>
+    <p hidden><input id="RFC2396-39" name="RFC2396-39" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output39" onclick="URLEncode39(), getInputValue39()">Generate Link</button>
+    </form>
+                              
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink39">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard39()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+     
+    <hr/>
+
+<!-- Malaysia (2) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from Malaysia</span></b></h6>
+    </br>
+    <img src="images/my-2.png" style="width:402px;height:310px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput40"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput40">
+    </div>
+    <p hidden><input id="RFC2396-40" name="RFC2396-40" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output40" onclick="URLEncode40(), getInputValue40()">Generate Link</button>
+    </form>
+                              
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink40">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard40()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+   
+    <hr/>
+
+<!-- Thailand (1) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    </br>
+    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from Thailand</span></b></h5>
+    </br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from Thailand</span></b></h6>
+    </br>
+    <img src="images/th-1.png" style="width:402px;height:206px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput35"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput35">
+    </div>
+    <p hidden><input id="RFC2396-35" name="RFC2396-35" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output35" onclick="URLEncode35(), getInputValue35()">Generate Link</button>
+    </form>
+                          
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink35">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard35()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+  
+    <hr/>
+
+<!-- Thailand (2) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from Thailand</span></b></h6>
+    </br>
+    <img src="images/th-2.png" style="width:402px;height:310px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput36"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput36">
+    </div>
+    <p hidden><input id="RFC2396-36" name="RFC2396-36" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output36" onclick="URLEncode36(), getInputValue36()">Generate Link</button>
+    </form>
+                          
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink36">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard36()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+
+    <hr/>
+
+<!-- Philippines (1) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    </br>
+    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from Philippines</span></b></h5>
+    </br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from Philippines</span></b></h6>
+    </br>
+    <img src="images/ph-1.png" style="width:402px;height:206px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput37"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput37">
+    </div>
+    <p hidden><input id="RFC2396-37" name="RFC2396-37" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output37" onclick="URLEncode37(), getInputValue37()">Generate Link</button>
+    </form>
+                            
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink37">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard37()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+    
+    <hr/>
+
+<!-- Philippines (2) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from Philippines</span></b></h6>
+    </br>
+    <img src="images/ph-2.png" style="width:402px;height:310px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput38"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput38">
+    </div>
+    <p hidden><input id="RFC2396-38" name="RFC2396-38" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output38" onclick="URLEncode38(), getInputValue38()">Generate Link</button>
+    </form>
+                            
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink38">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard38()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+  
+    <hr/>
+
+<!-- Mexico (1) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    </br>
+    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from Mexico</span></b></h5>
+    </br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from Mexico</span></b></h6>
+    </br>
+    <img src="images/mx-1.png" style="width:402px;height:206px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput23"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput23">
+    </div>
+    <p hidden><input id="RFC2396-23" name="RFC2396-23" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output23" onclick="URLEncode23(), getInputValue23()">Generate Link</button>
+    </form>
+                        
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink23">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard23()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+      
+    <hr/>
+
+<!-- Mexico (2) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from Mexico</span></b></h6>
+    </br>
+    <img src="images/mx-2.png" style="width:402px;height:310px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput24"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput24">
+    </div>
+    <p hidden><input id="RFC2396-24" name="RFC2396-24" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output24" onclick="URLEncode24(), getInputValue24()">Generate Link</button>
+    </form>
+                      
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink24">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard24()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+    
+    <hr/>
+
+<!-- Brazil (1) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    </br>
+    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from Brazil</span></b></h5>
+    </br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from Brazil</span></b></h6>
+    </br>
+    <img src="images/br-1.png" style="width:402px;height:206px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput27"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput27">
+    </div>
+    <p hidden><input id="RFC2396-27" name="RFC2396-27" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output27" onclick="URLEncode27(), getInputValue27()">Generate Link</button>
+    </form>
+                        
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink27">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard27()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+
+    <hr/>
+
+<!-- Brazil (2) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from Brazil</span></b></h6>
+    </br>
+    <img src="images/br-2.png" style="width:402px;height:310px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput28"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput28">
+    </div>
+    <p hidden><input id="RFC2396-28" name="RFC2396-28" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output28" onclick="URLEncode28(), getInputValue28()">Generate Link</button>
+    </form>
+                        
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink28">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard28()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+
+    <hr/>
+
+<!-- Colombia (1) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    </br>
+    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from Colombia</span></b></h5>
+    </br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from Colombia</span></b></h6>
+    </br>
+    <img src="images/co-1.png" style="width:402px;height:206px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput41"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput41">
+    </div>
+    <p hidden><input id="RFC2396-41" name="RFC2396-41" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output41" onclick="URLEncode41(), getInputValue41()">Generate Link</button>
+    </form>
+                                  
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink41">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard41()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+        
+    <hr/>
+
+<!-- Colombia (2) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from Colombia</span></b></h6>
+    </br>
+    <img src="images/co-2.png" style="width:402px;height:310px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput42"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput42">
+    </div>
+    <p hidden><input id="RFC2396-42" name="RFC2396-42" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output42" onclick="URLEncode42(), getInputValue42()">Generate Link</button>
+    </form>
+                                  
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink42">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard42()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+       
+    <hr/>
+
+<!-- United Arab Emirates (1) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    </br>
+    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from United Arab Emirates</span></b></h5>
+    </br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from United Arab Emirates</span></b></h6>
+    </br>
+    <img src="images/ae-1.png" style="width:402px;height:206px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput47"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput47">
+    </div>
+    <p hidden><input id="RFC2396-47" name="RFC2396-47" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output47" onclick="URLEncode47(), getInputValue47()">Generate Link</button>
+    </form>
+                                      
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink47">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard47()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+            
+    <hr/>
+
+<!-- United Arab Emirates (2) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from United Arab Emirates</span></b></h6>
+    </br>
+    <img src="images/ae-2.png" style="width:402px;height:310px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput48"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput48">
+    </div>
+    <p hidden><input id="RFC2396-48" name="RFC2396-48" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output48" onclick="URLEncode48(), getInputValue48()">Generate Link</button>
+    </form>
+                                      
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink48">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard48()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+           
+    <hr/>
+
+<!-- Israel (1) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    </br>
+    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from Israel</span></b></h5>
+    </br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from Israel</span></b></h6>
+    </br>
+    <img src="images/il-1.png" style="width:402px;height:206px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput57"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput57">
+    </div>
+    <p hidden><input id="RFC2396-57" name="RFC2396-57" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output57" onclick="URLEncode57(), getInputValue57()">Generate Link</button>
+    </form>
+                                    
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink57">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard57()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+          
+    <hr/>
+
+<!-- Israel (2) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from Israel</span></b></h6>
+    </br>
+    <img src="images/il-2.png" style="width:402px;height:310px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput58"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput58">
+    </div>
+    <p hidden><input id="RFC2396-58" name="RFC2396-58" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output58" onclick="URLEncode58(), getInputValue58()">Generate Link</button>
+    </form>
+                                    
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink58">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard58()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+         
+    <hr/>
+
+<!-- South Africa (1) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    </br>
+    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from South Africa</span></b></h5>
+    </br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from South Africa</span></b></h6>
+    </br>
+    <img src="images/za-1.png" style="width:402px;height:206px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput43"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput43">
+    </div>
+    <p hidden><input id="RFC2396-43" name="RFC2396-43" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output43" onclick="URLEncode43(), getInputValue43()">Generate Link</button>
+    </form>
+                                    
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink43">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard43()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+          
+    <hr/>
+
+<!-- South Africa (2) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from South Africa</span></b></h6>
+    </br>
+    <img src="images/za-2.png" style="width:402px;height:310px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput44"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput44">
+    </div>
+    <p hidden><input id="RFC2396-44" name="RFC2396-44" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output44" onclick="URLEncode44(), getInputValue44()">Generate Link</button>
+    </form>
+                                    
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink44">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard44()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+         
+    <hr/>
+
+<!-- Egypt (1) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    </br>
+    <h5><b><span style='background:lime;mso-highlight:lime'>Google Search Results from Egypt</span></b></h5>
+    </br>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from Egypt</span></b></h6>
+    </br>
+    <img src="images/eg-1.png" style="width:402px;height:206px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput45"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput45">
+    </div>
+    <p hidden><input id="RFC2396-45" name="RFC2396-45" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output45" onclick="URLEncode45(), getInputValue45()">Generate Link</button>
+    </form>
+                                      
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink45">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard45()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+            
+    <hr/>
+
+<!-- Egypt (2) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from Egypt</span></b></h6>
+    </br>
+    <img src="images/eg-2.png" style="width:402px;height:310px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput46"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput46">
+    </div>
+    <p hidden><input id="RFC2396-46" name="RFC2396-46" type="CHECKBOX" checked="checked" /></p>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output46" onclick="URLEncode46(), getInputValue46()">Generate Link</button>
+    </form>
+                                      
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink46">Nothing to show</p>
+    <input type="hidden" id="input">
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard46()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    </div>
+           
+    <hr/>
+
 <script>
+
+// United States (1)
 
 function URLEncode( )
 {
@@ -498,6 +1811,8 @@ function copyToClipboard()
     navigator.clipboard.writeText(text);
 }
 
+// United States (2)
+
 function URLEncode2( )
 {
   var plaintext = document.getElementById('textInput2').value;
@@ -562,6 +1877,8 @@ function copyToClipboard2()
     event.preventDefault();
     navigator.clipboard.writeText(text2);
 }
+
+// United Kingdom (1)
 
 function URLEncode3( )
 {
@@ -628,6 +1945,8 @@ function copyToClipboard3()
     navigator.clipboard.writeText(text3);
 }
 
+// United Kingdom (2)
+
 function URLEncode4( )
 {
   var plaintext = document.getElementById('textInput4').value;
@@ -692,6 +2011,8 @@ function copyToClipboard4()
     event.preventDefault();
     navigator.clipboard.writeText(text4);
 }
+
+// Germany (1)
 
 function URLEncode5( )
 {
@@ -758,6 +2079,8 @@ function copyToClipboard5()
     navigator.clipboard.writeText(text5);
 }
 
+// Germany (2)
+
 function URLEncode6( )
 {
   var plaintext = document.getElementById('textInput6').value;
@@ -822,6 +2145,8 @@ function copyToClipboard6()
     event.preventDefault();
     navigator.clipboard.writeText(text6);
 }
+
+// France (1)
 
 function URLEncode7( )
 {
@@ -888,6 +2213,8 @@ function copyToClipboard7()
     navigator.clipboard.writeText(text7);
 }
 
+// France (2)
+
 function URLEncode8( )
 {
   var plaintext = document.getElementById('textInput8').value;
@@ -952,6 +2279,8 @@ function copyToClipboard8()
     event.preventDefault();
     navigator.clipboard.writeText(text8);
 }
+
+// Japan (1)
 
 function URLEncode9( )
 {
@@ -1018,6 +2347,8 @@ function copyToClipboard9()
     navigator.clipboard.writeText(text9);
 }
 
+// Japan (2)
+
 function URLEncode10( )
 {
   var plaintext = document.getElementById('textInput10').value;
@@ -1082,6 +2413,8 @@ function copyToClipboard10()
     event.preventDefault();
     navigator.clipboard.writeText(text10);
 }
+
+// South Korea (1)
 
 function URLEncode11( )
 {
@@ -1148,6 +2481,8 @@ function copyToClipboard11()
     navigator.clipboard.writeText(text11);
 }
 
+// South Korea (2)
+
 function URLEncode12( )
 {
   var plaintext = document.getElementById('textInput12').value;
@@ -1212,6 +2547,8 @@ function copyToClipboard12()
     event.preventDefault();
     navigator.clipboard.writeText(text12);
 }
+
+// Singapore (1)
 
 function URLEncode13( )
 {
@@ -1278,6 +2615,8 @@ function copyToClipboard13()
     navigator.clipboard.writeText(text13);
 }
 
+// Singapore (2)
+
 function URLEncode14( )
 {
   var plaintext = document.getElementById('textInput14').value;
@@ -1342,6 +2681,8 @@ function copyToClipboard14()
     event.preventDefault();
     navigator.clipboard.writeText(text14);
 }
+
+// India (1)
 
 function URLEncode15( )
 {
@@ -1408,6 +2749,8 @@ function copyToClipboard15()
     navigator.clipboard.writeText(text15);
 }
 
+// India (2)
+
 function URLEncode16( )
 {
   var plaintext = document.getElementById('textInput16').value;
@@ -1471,6 +2814,2820 @@ function copyToClipboard16()
     let text16 = document.getElementById('finalLink16').innerText;
     event.preventDefault();
     navigator.clipboard.writeText(text16);
+}
+
+// Australia (1)
+
+function URLEncode17( )
+{
+  var plaintext = document.getElementById('textInput17').value;
+  if (document.getElementById('RFC2396-17').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput17').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput17').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput17').select();
+  return false;
+};
+
+function getInputValue17( )
+{
+    let directLink17 = '';
+    let inputValue17 = document.getElementById('textInput17').value;
+    directLink17 = 'https://www.google.com/search?q=' + inputValue17 + '&uule=w+CAIQICIkU3lkbmV5IENCRCxOZXcgU291dGggV2FsZXMsQXVzdHJhbGlh&gl=au';
+    var plaintext = directLink17;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink17').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput17").value = "";
+};
+
+function copyToClipboard17()
+{
+    let text17 = document.getElementById('finalLink17').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text17);
+}
+
+// Australia (2)
+
+function URLEncode18( )
+{
+  var plaintext = document.getElementById('textInput18').value;
+  if (document.getElementById('RFC2396-18').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput18').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput18').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput18').select();
+  return false;
+};
+
+function getInputValue18( )
+{
+    let directLink18 = '';
+    let inputValue18 = document.getElementById('textInput18').value;
+    directLink18 = 'https://www.google.com/search?q=' + inputValue18 + '&uule=w+CAIQICIkU3lkbmV5IENCRCxOZXcgU291dGggV2FsZXMsQXVzdHJhbGlh&gl=au&cr=countryAU';
+    var plaintext = directLink18;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink18').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput18").value = "";
+};
+
+function copyToClipboard18()
+{
+    let text18 = document.getElementById('finalLink18').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text18);
+}
+
+// Turkey (1)
+
+function URLEncode19( )
+{
+  var plaintext = document.getElementById('textInput19').value;
+  if (document.getElementById('RFC2396-19').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput19').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput19').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput19').select();
+  return false;
+};
+
+function getInputValue19( )
+{
+    let directLink19 = '';
+    let inputValue19 = document.getElementById('textInput19').value;
+    directLink19 = 'https://www.google.com/search?q=' + inputValue19 + '&uule=w+CAIQICIYSXN0YW5idWwsSXN0YW5idWwsVHVya2V5&gl=tr';
+    var plaintext = directLink19;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink19').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput19").value = "";
+};
+
+function copyToClipboard19()
+{
+    let text19 = document.getElementById('finalLink19').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text19);
+}
+
+// Turkey (2)
+
+function URLEncode20( )
+{
+  var plaintext = document.getElementById('textInput20').value;
+  if (document.getElementById('RFC2396-20').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput20').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput20').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput20').select();
+  return false;
+};
+
+function getInputValue20( )
+{
+    let directLink20 = '';
+    let inputValue20 = document.getElementById('textInput20').value;
+    directLink20 = 'https://www.google.com/search?q=' + inputValue20 + '&uule=w+CAIQICIYSXN0YW5idWwsSXN0YW5idWwsVHVya2V5&gl=tr&cr=countryTR';
+    var plaintext = directLink20;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink20').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput20").value = "";
+};
+
+function copyToClipboard20()
+{
+    let text20 = document.getElementById('finalLink20').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text20);
+}
+
+// Indonesia (1)
+
+function URLEncode21( )
+{
+  var plaintext = document.getElementById('textInput21').value;
+  if (document.getElementById('RFC2396-21').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput21').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput21').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput21').select();
+  return false;
+};
+
+function getInputValue21( )
+{
+    let directLink21 = '';
+    let inputValue21 = document.getElementById('textInput21').value;
+    directLink21 = 'https://www.google.com/search?q=' + inputValue21 + '&uule=w+CAIQICIZSmFrYXJ0YSxKYWthcnRhLEluZG9uZXNpYQ&gl=id';
+    var plaintext = directLink21;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink21').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput21").value = "";
+};
+
+function copyToClipboard21()
+{
+    let text21 = document.getElementById('finalLink21').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text21);
+}
+
+// Indonesia (2)
+
+function URLEncode22( )
+{
+  var plaintext = document.getElementById('textInput22').value;
+  if (document.getElementById('RFC2396-22').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput22').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput22').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput22').select();
+  return false;
+};
+
+function getInputValue22( )
+{
+    let directLink22 = '';
+    let inputValue22 = document.getElementById('textInput22').value;
+    directLink22 = 'https://www.google.com/search?q=' + inputValue22 + '&uule=w+CAIQICIZSmFrYXJ0YSxKYWthcnRhLEluZG9uZXNpYQ&gl=id&cr=countryID';
+    var plaintext = directLink22;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink22').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput22").value = "";
+};
+
+function copyToClipboard22()
+{
+    let text22 = document.getElementById('finalLink22').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text22);
+}
+
+// Mexico (1)
+
+function URLEncode23( )
+{
+  var plaintext = document.getElementById('textInput23').value;
+  if (document.getElementById('RFC2396-23').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput23').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput23').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput23').select();
+  return false;
+};
+
+function getInputValue23( )
+{
+    let directLink23 = '';
+    let inputValue23 = document.getElementById('textInput23').value;
+    directLink23 = 'https://www.google.com/search?q=' + inputValue23 + '&uule=w+CAIQICIeTWV4aWNvIENpdHksTWV4aWNvIENpdHksTWV4aWNv&gl=mx';
+    var plaintext = directLink23;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink23').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput23").value = "";
+};
+
+function copyToClipboard23()
+{
+    let text23 = document.getElementById('finalLink23').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text23);
+}
+
+// Mexico (2)
+
+function URLEncode24( )
+{
+  var plaintext = document.getElementById('textInput24').value;
+  if (document.getElementById('RFC2396-24').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput24').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput24').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput24').select();
+  return false;
+};
+
+function getInputValue24( )
+{
+    let directLink24 = '';
+    let inputValue24 = document.getElementById('textInput24').value;
+    directLink24 = 'https://www.google.com/search?q=' + inputValue24 + '&uule=w+CAIQICIeTWV4aWNvIENpdHksTWV4aWNvIENpdHksTWV4aWNv&gl=mx&cr=countryMX';
+    var plaintext = directLink24;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink24').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput24").value = "";
+};
+
+function copyToClipboard24()
+{
+    let text24 = document.getElementById('finalLink24').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text24);
+}
+
+// Russia (1)
+
+function URLEncode25( )
+{
+  var plaintext = document.getElementById('textInput25').value;
+  if (document.getElementById('RFC2396-25').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput25').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput25').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput25').select();
+  return false;
+};
+
+function getInputValue25( )
+{
+    let directLink25 = '';
+    let inputValue25 = document.getElementById('textInput25').value;
+    directLink25 = 'https://www.google.com/search?q=' + inputValue25 + '&uule=w+CAIQICIUTW9zY293LE1vc2NvdyxSdXNzaWE&gl=ru';
+    var plaintext = directLink25;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink25').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput25").value = "";
+};
+
+function copyToClipboard25()
+{
+    let text25 = document.getElementById('finalLink25').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text25);
+}
+
+// Russia (2)
+
+function URLEncode26( )
+{
+  var plaintext = document.getElementById('textInput26').value;
+  if (document.getElementById('RFC2396-26').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput26').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput26').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput26').select();
+  return false;
+};
+
+function getInputValue26( )
+{
+    let directLink26 = '';
+    let inputValue26 = document.getElementById('textInput26').value;
+    directLink26 = 'https://www.google.com/search?q=' + inputValue26 + '&uule=w+CAIQICIUTW9zY293LE1vc2NvdyxSdXNzaWE&gl=ru&cr=countryRU';
+    var plaintext = directLink26;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink26').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput26").value = "";
+};
+
+function copyToClipboard26()
+{
+    let text26 = document.getElementById('finalLink26').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text26);
+}
+
+// Brazil (1)
+
+function URLEncode27( )
+{
+  var plaintext = document.getElementById('textInput27').value;
+  if (document.getElementById('RFC2396-27').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput27').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput27').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput27').select();
+  return false;
+};
+
+function getInputValue27( )
+{
+    let directLink27 = '';
+    let inputValue27 = document.getElementById('textInput27').value;
+    directLink27 = 'https://www.google.com/search?q=' + inputValue27 + '&uule=w+CAIQICIjU2FvIFBhdWxvLFN0YXRlIG9mIFNhbyBQYXVsbyxCcmF6aWw&gl=br';
+    var plaintext = directLink27;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink27').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput27").value = "";
+};
+
+function copyToClipboard27()
+{
+    let text27 = document.getElementById('finalLink27').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text27);
+}
+
+// Brazil (2)
+
+function URLEncode28( )
+{
+  var plaintext = document.getElementById('textInput28').value;
+  if (document.getElementById('RFC2396-28').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput28').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput28').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput28').select();
+  return false;
+};
+
+function getInputValue28( )
+{
+    let directLink28 = '';
+    let inputValue28 = document.getElementById('textInput28').value;
+    directLink28 = 'https://www.google.com/search?q=' + inputValue28 + '&uule=w+CAIQICIjU2FvIFBhdWxvLFN0YXRlIG9mIFNhbyBQYXVsbyxCcmF6aWw&gl=br&cr=countryBR';
+    var plaintext = directLink28;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink28').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput28").value = "";
+};
+
+function copyToClipboard28()
+{
+    let text28 = document.getElementById('finalLink28').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text28);
+}
+
+// Hong Kong (1)
+
+function URLEncode29( )
+{
+  var plaintext = document.getElementById('textInput29').value;
+  if (document.getElementById('RFC2396-29').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput29').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput29').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput29').select();
+  return false;
+};
+
+function getInputValue29( )
+{
+    let directLink29 = '';
+    let inputValue29 = document.getElementById('textInput29').value;
+    directLink29 = 'https://www.google.com/search?q=' + inputValue29 + '&uule=w+CAIQICIJSG9uZyBLb25n&gl=hk';
+    var plaintext = directLink29;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink29').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput29").value = "";
+};
+
+function copyToClipboard29()
+{
+    let text29 = document.getElementById('finalLink29').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text29);
+}
+
+// Hong Kong (2)
+
+function URLEncode30( )
+{
+  var plaintext = document.getElementById('textInput30').value;
+  if (document.getElementById('RFC2396-30').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput30').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput30').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput30').select();
+  return false;
+};
+
+function getInputValue30( )
+{
+    let directLink30 = '';
+    let inputValue30 = document.getElementById('textInput30').value;
+    directLink30 = 'https://www.google.com/search?q=' + inputValue30 + '&uule=w+CAIQICIJSG9uZyBLb25n&gl=hk&cr=countryHK';
+    var plaintext = directLink30;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink30').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput30").value = "";
+};
+
+function copyToClipboard30()
+{
+    let text30 = document.getElementById('finalLink30').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text30);
+}
+
+// Pakistan (1)
+
+function URLEncode31( )
+{
+  var plaintext = document.getElementById('textInput31').value;
+  if (document.getElementById('RFC2396-31').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput31').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput31').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput31').select();
+  return false;
+};
+
+function getInputValue31( )
+{
+    let directLink31 = '';
+    let inputValue31 = document.getElementById('textInput31').value;
+    directLink31 = 'https://www.google.com/search?q=' + inputValue31 + '&uule=w+CAIQICIWS2FyYWNoaSxTaW5kaCxQYWtpc3Rhbg&gl=pk';
+    var plaintext = directLink31;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink31').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput31").value = "";
+};
+
+function copyToClipboard31()
+{
+    let text31 = document.getElementById('finalLink31').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text31);
+}
+
+// Pakistan (2)
+
+function URLEncode32( )
+{
+  var plaintext = document.getElementById('textInput32').value;
+  if (document.getElementById('RFC2396-32').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput32').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput32').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput32').select();
+  return false;
+};
+
+function getInputValue32( )
+{
+    let directLink32 = '';
+    let inputValue32 = document.getElementById('textInput32').value;
+    directLink32 = 'https://www.google.com/search?q=' + inputValue32 + '&uule=w+CAIQICIWS2FyYWNoaSxTaW5kaCxQYWtpc3Rhbg&gl=pk&cr=countryPK';
+    var plaintext = directLink32;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink32').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput32").value = "";
+};
+
+function copyToClipboard32()
+{
+    let text32 = document.getElementById('finalLink32').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text32);
+}
+
+// Canada (1)
+
+function URLEncode33( )
+{
+  var plaintext = document.getElementById('textInput33').value;
+  if (document.getElementById('RFC2396-33').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput33').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput33').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput33').select();
+  return false;
+};
+
+function getInputValue33( )
+{
+    let directLink33 = '';
+    let inputValue33 = document.getElementById('textInput33').value;
+    directLink33 = 'https://www.google.com/search?q=' + inputValue33 + '&uule=w+CAIQICIWVG9yb250byxPbnRhcmlvLENhbmFkYQ&gl=ca';
+    var plaintext = directLink33;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink33').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput33").value = "";
+};
+
+function copyToClipboard33()
+{
+    let text33 = document.getElementById('finalLink33').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text33);
+}
+
+// Canada (2)
+
+function URLEncode34( )
+{
+  var plaintext = document.getElementById('textInput34').value;
+  if (document.getElementById('RFC2396-34').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput34').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput34').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput34').select();
+  return false;
+};
+
+function getInputValue34( )
+{
+    let directLink34 = '';
+    let inputValue34 = document.getElementById('textInput34').value;
+    directLink34 = 'https://www.google.com/search?q=' + inputValue34 + '&uule=w+CAIQICIWVG9yb250byxPbnRhcmlvLENhbmFkYQ&gl=ca&cr=countryCA';
+    var plaintext = directLink34;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink34').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput34").value = "";
+};
+
+function copyToClipboard34()
+{
+    let text34 = document.getElementById('finalLink34').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text34);
+}
+
+// Thailand (1)
+
+function URLEncode35( )
+{
+  var plaintext = document.getElementById('textInput35').value;
+  if (document.getElementById('RFC2396-35').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput35').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput35').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput35').select();
+  return false;
+};
+
+function getInputValue35( )
+{
+    let directLink35 = '';
+    let inputValue35 = document.getElementById('textInput35').value;
+    directLink35 = 'https://www.google.com/search?q=' + inputValue35 + '&uule=w+CAIQICIYQmFuZ2tvayxCYW5na29rLFRoYWlsYW5k&gl=th';
+    var plaintext = directLink35;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink35').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput35").value = "";
+};
+
+function copyToClipboard35()
+{
+    let text35 = document.getElementById('finalLink35').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text35);
+}
+
+// Thailand (2)
+
+function URLEncode36( )
+{
+  var plaintext = document.getElementById('textInput36').value;
+  if (document.getElementById('RFC2396-36').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput36').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput36').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput36').select();
+  return false;
+};
+
+function getInputValue36( )
+{
+    let directLink36 = '';
+    let inputValue36 = document.getElementById('textInput36').value;
+    directLink36 = 'https://www.google.com/search?q=' + inputValue36 + '&uule=w+CAIQICIYQmFuZ2tvayxCYW5na29rLFRoYWlsYW5k&gl=th&cr=countryTH';
+    var plaintext = directLink36;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink36').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput36").value = "";
+};
+
+function copyToClipboard36()
+{
+    let text36 = document.getElementById('finalLink36').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text36);
+}
+
+// Philippines (1)
+
+function URLEncode37( )
+{
+  var plaintext = document.getElementById('textInput37').value;
+  if (document.getElementById('RFC2396-37').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput37').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput37').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput37').select();
+  return false;
+};
+
+function getInputValue37( )
+{
+    let directLink37 = '';
+    let inputValue37 = document.getElementById('textInput37').value;
+    directLink37 = 'https://www.google.com/search?q=' + inputValue37 + '&uule=w+CAIQICIYTWV0cm8gTWFuaWxhLFBoaWxpcHBpbmVz&gl=ph';
+    var plaintext = directLink37;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink37').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput37").value = "";
+};
+
+function copyToClipboard37()
+{
+    let text37 = document.getElementById('finalLink37').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text37);
+}
+
+// Philippines (2)
+
+function URLEncode38( )
+{
+  var plaintext = document.getElementById('textInput38').value;
+  if (document.getElementById('RFC2396-38').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput38').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput38').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput38').select();
+  return false;
+};
+
+function getInputValue38( )
+{
+    let directLink38 = '';
+    let inputValue38 = document.getElementById('textInput38').value;
+    directLink38 = 'https://www.google.com/search?q=' + inputValue38 + '&uule=w+CAIQICIYTWV0cm8gTWFuaWxhLFBoaWxpcHBpbmVz&gl=ph&cr=countryPH';
+    var plaintext = directLink38;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink38').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput38").value = "";
+};
+
+function copyToClipboard38()
+{
+    let text38 = document.getElementById('finalLink38').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text38);
+}
+
+// Malaysia (1)
+
+function URLEncode39( )
+{
+  var plaintext = document.getElementById('textInput39').value;
+  if (document.getElementById('RFC2396-39').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput39').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput39').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput39').select();
+  return false;
+};
+
+function getInputValue39( )
+{
+    let directLink39 = '';
+    let inputValue39 = document.getElementById('textInput39').value;
+    directLink39 = 'https://www.google.com/search?q=' + inputValue39 + '&uule=w+CAIQICIBS3VhbGEgTHVtcHVyLEZlZGVyYWwgVGVycml0b3J5IG9mIEt1YWxhIEx1bXB1cixNYWxheXNpYQ&gl=my';
+    var plaintext = directLink39;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink39').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput39").value = "";
+};
+
+function copyToClipboard39()
+{
+    let text39 = document.getElementById('finalLink39').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text39);
+}
+
+// Malaysia (2)
+
+function URLEncode40( )
+{
+  var plaintext = document.getElementById('textInput40').value;
+  if (document.getElementById('RFC2396-40').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput40').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput40').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput40').select();
+  return false;
+};
+
+function getInputValue40( )
+{
+    let directLink40 = '';
+    let inputValue40 = document.getElementById('textInput40').value;
+    directLink40 = 'https://www.google.com/search?q=' + inputValue40 + '&uule=w+CAIQICIBS3VhbGEgTHVtcHVyLEZlZGVyYWwgVGVycml0b3J5IG9mIEt1YWxhIEx1bXB1cixNYWxheXNpYQ&gl=my&cr=countryMY';
+    var plaintext = directLink40;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink40').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput40").value = "";
+};
+
+function copyToClipboard40()
+{
+    let text40 = document.getElementById('finalLink40').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text40);
+}
+
+// Colombia (1)
+
+function URLEncode41( )
+{
+  var plaintext = document.getElementById('textInput41').value;
+  if (document.getElementById('RFC2396-41').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput41').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput41').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput41').select();
+  return false;
+};
+
+function getInputValue41( )
+{
+    let directLink41 = '';
+    let inputValue41 = document.getElementById('textInput41').value;
+    directLink41 = 'https://www.google.com/search?q=' + inputValue41 + '&uule=w+CAIQICIWQm9nb3RhLEJvZ290YSxDb2xvbWJpYQ&gl=co';
+    var plaintext = directLink41;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink41').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput41").value = "";
+};
+
+function copyToClipboard41()
+{
+    let text41 = document.getElementById('finalLink41').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text41);
+}
+
+// Colombia (2)
+
+function URLEncode42( )
+{
+  var plaintext = document.getElementById('textInput42').value;
+  if (document.getElementById('RFC2396-42').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput42').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput42').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput42').select();
+  return false;
+};
+
+function getInputValue42( )
+{
+    let directLink42 = '';
+    let inputValue42 = document.getElementById('textInput42').value;
+    directLink42 = 'https://www.google.com/search?q=' + inputValue42 + '&uule=w+CAIQICIWQm9nb3RhLEJvZ290YSxDb2xvbWJpYQ&gl=co&cr=countryCO';
+    var plaintext = directLink42;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink42').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput42").value = "";
+};
+
+function copyToClipboard42()
+{
+    let text42 = document.getElementById('finalLink42').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text42);
+}
+
+// South Africa (1)
+
+function URLEncode43( )
+{
+  var plaintext = document.getElementById('textInput43').value;
+  if (document.getElementById('RFC2396-43').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput43').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput43').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput43').select();
+  return false;
+};
+
+function getInputValue43( )
+{
+    let directLink43 = '';
+    let inputValue43 = document.getElementById('textInput43').value;
+    directLink43 = 'https://www.google.com/search?q=' + inputValue43 + '&uule=w+CAIQICIhSm9oYW5uZXNidXJnLEdhdXRlbmcsU291dGggQWZyaWNh&gl=za';
+    var plaintext = directLink43;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink43').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput43").value = "";
+};
+
+function copyToClipboard43()
+{
+    let text43 = document.getElementById('finalLink43').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text43);
+}
+
+// South Africa (2)
+
+function URLEncode44( )
+{
+  var plaintext = document.getElementById('textInput44').value;
+  if (document.getElementById('RFC2396-44').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput44').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput44').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput44').select();
+  return false;
+};
+
+function getInputValue44( )
+{
+    let directLink44 = '';
+    let inputValue44 = document.getElementById('textInput44').value;
+    directLink44 = 'https://www.google.com/search?q=' + inputValue44 + '&uule=w+CAIQICIhSm9oYW5uZXNidXJnLEdhdXRlbmcsU291dGggQWZyaWNh&gl=za&cr=countryZA';
+    var plaintext = directLink44;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink44').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput44").value = "";
+};
+
+function copyToClipboard44()
+{
+    let text44 = document.getElementById('finalLink44').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text44);
+}
+
+// Egypt (1)
+
+function URLEncode45( )
+{
+  var plaintext = document.getElementById('textInput45').value;
+  if (document.getElementById('RFC2396-45').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput45').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput45').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput45').select();
+  return false;
+};
+
+function getInputValue45( )
+{
+    let directLink45 = '';
+    let inputValue45 = document.getElementById('textInput45').value;
+    directLink45 = 'https://www.google.com/search?q=' + inputValue45 + '&uule=w+CAIQICIXQ2Fpcm8gR292ZXJub3JhdGUsRWd5cHQ&gl=eg';
+    var plaintext = directLink45;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink45').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput45").value = "";
+};
+
+function copyToClipboard45()
+{
+    let text45 = document.getElementById('finalLink45').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text45);
+}
+
+// Egypt (2)
+
+function URLEncode46( )
+{
+  var plaintext = document.getElementById('textInput46').value;
+  if (document.getElementById('RFC2396-46').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput46').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput46').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput46').select();
+  return false;
+};
+
+function getInputValue46( )
+{
+    let directLink46 = '';
+    let inputValue46 = document.getElementById('textInput46').value;
+    directLink46 = 'https://www.google.com/search?q=' + inputValue46 + '&uule=w+CAIQICIXQ2Fpcm8gR292ZXJub3JhdGUsRWd5cHQ&gl=eg&cr=countryEG';
+    var plaintext = directLink46;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink46').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput46").value = "";
+};
+
+function copyToClipboard46()
+{
+    let text46 = document.getElementById('finalLink46').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text46);
+}
+
+// United Arab Emirates (1)
+
+function URLEncode47( )
+{
+  var plaintext = document.getElementById('textInput47').value;
+  if (document.getElementById('RFC2396-47').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput47').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput47').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput47').select();
+  return false;
+};
+
+function getInputValue47( )
+{
+    let directLink47 = '';
+    let inputValue47 = document.getElementById('textInput47').value;
+    directLink47 = 'https://www.google.com/search?q=' + inputValue47 + '&uule=w+CAIQICIgRHViYWksRHViYWksVW5pdGVkIEFyYWIgRW1pcmF0ZXM&gl=ae';
+    var plaintext = directLink47;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink47').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput47").value = "";
+};
+
+function copyToClipboard47()
+{
+    let text47 = document.getElementById('finalLink47').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text47);
+}
+
+// United Arab Emirates (2)
+
+function URLEncode48( )
+{
+  var plaintext = document.getElementById('textInput48').value;
+  if (document.getElementById('RFC2396-48').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput48').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput48').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput48').select();
+  return false;
+};
+
+function getInputValue48( )
+{
+    let directLink48 = '';
+    let inputValue48 = document.getElementById('textInput48').value;
+    directLink48 = 'https://www.google.com/search?q=' + inputValue48 + '&uule=w+CAIQICIgRHViYWksRHViYWksVW5pdGVkIEFyYWIgRW1pcmF0ZXM&gl=ae&cr=countryAE';
+    var plaintext = directLink48;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink48').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput48").value = "";
+};
+
+function copyToClipboard48()
+{
+    let text48 = document.getElementById('finalLink48').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text48);
+}
+
+// Norway (1)
+
+function URLEncode49( )
+{
+  var plaintext = document.getElementById('textInput49').value;
+  if (document.getElementById('RFC2396-49').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput49').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput49').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput49').select();
+  return false;
+};
+
+function getInputValue49( )
+{
+    let directLink49 = '';
+    let inputValue49 = document.getElementById('textInput49').value;
+    directLink49 = 'https://www.google.com/search?q=' + inputValue49 + '&uule=w+CAIQICIQT3NsbyxPc2xvLE5vcndheQ&gl=no';
+    var plaintext = directLink49;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink49').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput49").value = "";
+};
+
+function copyToClipboard49()
+{
+    let text49 = document.getElementById('finalLink49').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text49);
+}
+
+// Norway (2)
+
+function URLEncode50( )
+{
+  var plaintext = document.getElementById('textInput50').value;
+  if (document.getElementById('RFC2396-50').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput50').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput50').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput50').select();
+  return false;
+};
+
+function getInputValue50( )
+{
+    let directLink50 = '';
+    let inputValue50 = document.getElementById('textInput50').value;
+    directLink50 = 'https://www.google.com/search?q=' + inputValue50 + '&uule=w+CAIQICIQT3NsbyxPc2xvLE5vcndheQ&gl=no&cr=countryNO';
+    var plaintext = directLink50;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink50').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput50").value = "";
+};
+
+function copyToClipboard50()
+{
+    let text50 = document.getElementById('finalLink50').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text50);
+}
+
+// Sweden (1)
+
+function URLEncode51( )
+{
+  var plaintext = document.getElementById('textInput51').value;
+  if (document.getElementById('RFC2396-51').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput51').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput51').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput51').select();
+  return false;
+};
+
+function getInputValue51( )
+{
+    let directLink51 = '';
+    let inputValue51 = document.getElementById('textInput51').value;
+    directLink51 = 'https://www.google.com/search?q=' + inputValue51 + '&uule=w+CAIQICIhU3RvY2tob2xtLFN0b2NraG9sbSBDb3VudHksU3dlZGVu&gl=se';
+    var plaintext = directLink51;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink51').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput51").value = "";
+};
+
+function copyToClipboard51()
+{
+    let text51 = document.getElementById('finalLink51').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text51);
+}
+
+// Sweden (2)
+
+function URLEncode52( )
+{
+  var plaintext = document.getElementById('textInput52').value;
+  if (document.getElementById('RFC2396-52').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput52').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput52').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput52').select();
+  return false;
+};
+
+function getInputValue52( )
+{
+    let directLink52 = '';
+    let inputValue52 = document.getElementById('textInput52').value;
+    directLink52 = 'https://www.google.com/search?q=' + inputValue52 + '&uule=w+CAIQICIhU3RvY2tob2xtLFN0b2NraG9sbSBDb3VudHksU3dlZGVu&gl=se&cr=countrySE';
+    var plaintext = directLink52;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink52').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput52").value = "";
+};
+
+function copyToClipboard52()
+{
+    let text52 = document.getElementById('finalLink52').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text52);
+}
+
+// Switzerland (1)
+
+function URLEncode53( )
+{
+  var plaintext = document.getElementById('textInput53').value;
+  if (document.getElementById('RFC2396-53').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput53').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput53').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput53').select();
+  return false;
+};
+
+function getInputValue53( )
+{
+    let directLink53 = '';
+    let inputValue53 = document.getElementById('textInput53').value;
+    directLink53 = 'https://www.google.com/search?q=' + inputValue53 + '&uule=w+CAIQICIZWnVyaWNoLFp1cmljaCxTd2l0emVybGFuZA&gl=ch';
+    var plaintext = directLink53;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink53').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput53").value = "";
+};
+
+function copyToClipboard53()
+{
+    let text53 = document.getElementById('finalLink53').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text53);
+}
+
+// Switzerland (2)
+
+function URLEncode54( )
+{
+  var plaintext = document.getElementById('textInput54').value;
+  if (document.getElementById('RFC2396-54').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput54').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput54').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput54').select();
+  return false;
+};
+
+function getInputValue54( )
+{
+    let directLink54 = '';
+    let inputValue54 = document.getElementById('textInput54').value;
+    directLink54 = 'https://www.google.com/search?q=' + inputValue54 + '&uule=w+CAIQICIZWnVyaWNoLFp1cmljaCxTd2l0emVybGFuZA&gl=ch&cr=countryCH';
+    var plaintext = directLink54;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink54').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput54").value = "";
+};
+
+function copyToClipboard54()
+{
+    let text54 = document.getElementById('finalLink54').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text54);
+}
+
+// Netherlands (1)
+
+function URLEncode55( )
+{
+  var plaintext = document.getElementById('textInput55').value;
+  if (document.getElementById('RFC2396-55').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput55').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput55').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput55').select();
+  return false;
+};
+
+function getInputValue55( )
+{
+    let directLink55 = '';
+    let inputValue55 = document.getElementById('textInput55').value;
+    directLink55 = 'https://www.google.com/search?q=' + inputValue55 + '&uule=w+CAIQICIjQW1zdGVyZGFtLE5vcnRoIEhvbGxhbmQsTmV0aGVybGFuZHM&gl=nl';
+    var plaintext = directLink55;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink55').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput55").value = "";
+};
+
+function copyToClipboard55()
+{
+    let text55 = document.getElementById('finalLink55').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text55);
+}
+
+// Netherlands (2)
+
+function URLEncode56( )
+{
+  var plaintext = document.getElementById('textInput56').value;
+  if (document.getElementById('RFC2396-56').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput56').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput56').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput56').select();
+  return false;
+};
+
+function getInputValue56( )
+{
+    let directLink56 = '';
+    let inputValue56 = document.getElementById('textInput56').value;
+    directLink56 = 'https://www.google.com/search?q=' + inputValue56 + '&uule=w+CAIQICIjQW1zdGVyZGFtLE5vcnRoIEhvbGxhbmQsTmV0aGVybGFuZHM&gl=nl&cr=countryNL';
+    var plaintext = directLink56;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink56').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput56").value = "";
+};
+
+function copyToClipboard56()
+{
+    let text56 = document.getElementById('finalLink56').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text56);
+}
+
+// Israel (1)
+
+function URLEncode57( )
+{
+  var plaintext = document.getElementById('textInput57').value;
+  if (document.getElementById('RFC2396-57').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput57').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput57').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput57').select();
+  return false;
+};
+
+function getInputValue57( )
+{
+    let directLink57 = '';
+    let inputValue57 = document.getElementById('textInput57').value;
+    directLink57 = 'https://www.google.com/search?q=' + inputValue57 + '&uule=w+CAIQICImVGVsIEF2aXYtWWFmbyxUZWwgQXZpdiBEaXN0cmljdCxJc3JhZWw&gl=il';
+    var plaintext = directLink57;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink57').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput57").value = "";
+};
+
+function copyToClipboard57()
+{
+    let text57 = document.getElementById('finalLink57').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text57);
+}
+
+// Israel (2)
+
+function URLEncode58( )
+{
+  var plaintext = document.getElementById('textInput58').value;
+  if (document.getElementById('RFC2396-58').checked) {  // OLD Browser mode
+    // The Javascript escape and unescape functions do not correspond
+    // with what browsers actually do...
+    var SAFECHARS = "0123456789" +          // Numeric
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
+            "abcdefghijklmnopqrstuvwxyz" +
+            "-_.!~*'()";          // RFC2396 Mark characters
+    var HEX = "0123456789ABCDEF";
+
+    var encoded = "";
+    for (var i = 0; i < plaintext.length; i++ ) {
+      var ch = plaintext.charAt(i);
+        if (ch == " ") {
+          encoded += "+";       // x-www-urlencoded, rather than %20
+      } else if (SAFECHARS.indexOf(ch) != -1) {
+          encoded += ch;
+      } else {
+          var charCode = ch.charCodeAt(0);
+        if (charCode > 255) {
+            alert( "Unicode Character '" 
+                          + ch 
+                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
+                    "(URL encoding only supports 8-bit characters.)\\n" +
+                "A space (+) will be substituted." );
+          encoded += "+";
+        } else {
+          encoded += "%";
+          encoded += HEX.charAt((charCode >> 4) & 0xF);
+          encoded += HEX.charAt(charCode & 0xF);
+        }
+      }
+    } // for
+
+    document.getElementById('textInput58').value = encoded;
+  } else {  // Modern browser mode
+    document.getElementById('textInput58').value = encodeURIComponent(plaintext);
+  }
+  document.getElementById('textInput58').select();
+  return false;
+};
+
+function getInputValue58( )
+{
+    let directLink58 = '';
+    let inputValue58 = document.getElementById('textInput58').value;
+    directLink58 = 'https://www.google.com/search?q=' + inputValue58 + '&uule=w+CAIQICImVGVsIEF2aXYtWWFmbyxUZWwgQXZpdiBEaXN0cmljdCxJc3JhZWw&gl=il&cr=countryIL';
+    var plaintext = directLink58;
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
+    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    document.getElementById('finalLink58').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+    document.getElementById("textInput58").value = "";
+};
+
+function copyToClipboard58()
+{
+    let text58 = document.getElementById('finalLink58').innerText;
+    event.preventDefault();
+    navigator.clipboard.writeText(text58);
 }
 
 </script>
