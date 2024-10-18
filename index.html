@@ -134,15 +134,14 @@
     <input type="text" class="form-control" id="textInput1">
     </div>
     <div class="form-group">
-    <p hidden><input id="RFC2396" name="RFC2396" type="CHECKBOX" checked="checked" /></p>
     </div>
     <div class="form-group">
-    <button class="btn btn-primary" type="button" id="urlencode" onclick="URLEncode(), getInputValue()">Generate Link</button>
+    <button class="btn btn-primary" type="button" id="output1" onclick="URLEncode1(), getInputValue1()">Generate Link</button>
     </form>
 
     <div class="result-container mt-4">
-    <p class="alert alert-success" id="finalLink">Nothing to show</p>
-    <button class="btn btn-outlined-primary" onclick="copyToClipboard()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
+    <p class="alert alert-success" id="finalLink1">Nothing to show</p>
+    <button class="btn btn-outlined-primary" onclick="copyToClipboard1()"><span style='background:rgb(212, 237, 218);mso-highlight:rgb(212, 237, 218)'>Copy</span></button>
     </div>
 
     <hr/>
@@ -162,7 +161,6 @@
     <input type="text" class="form-control" id="textInput2">
     </div>
     <div class="form-group">
-    <p hidden><input id="RFC2396-2" name="RFC2396-2" type="CHECKBOX" checked="checked" /></p>
     </div>
     <div class="form-group">
     <button class="btn btn-primary" type="button" id="output2" onclick="URLEncode2(), getInputValue2()">Generate Link</button>
@@ -193,7 +191,6 @@
     <label for="textInput3"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
     <input type="text" class="form-control" id="textInput3">
     </div>
-    <p hidden><input id="RFC2396-3" name="RFC2396-3" type="CHECKBOX" checked="checked" /></p>
     </div>
     <div class="form-group">
     <button class="btn btn-primary" type="button" id="output3" onclick="URLEncode3(), getInputValue3()">Generate Link</button>
@@ -221,7 +218,6 @@
     <label for="textInput4"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
     <input type="text" class="form-control" id="textInput4">
     </div>
-    <p hidden><input id="RFC2396-4" name="RFC2396-4" type="CHECKBOX" checked="checked" /></p>
     </div>
     <div class="form-group">
     <button class="btn btn-primary" type="button" id="output4" onclick="URLEncode4(), getInputValue4()">Generate Link</button>
@@ -2183,806 +2179,523 @@
 
 // United States (1)
 
-function URLEncode( )
-{
-  var plaintext = document.getElementById('textInput1').value;
-  if (document.getElementById('RFC2396').checked) {  // OLD Browser mode
-    // The Javascript escape and unescape functions do not correspond
-    // with what browsers actually do...
-    var SAFECHARS = "0123456789" +          // Numeric
-            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
-            "abcdefghijklmnopqrstuvwxyz" +
-            "-_.!~*'()";          // RFC2396 Mark characters
-    var HEX = "0123456789ABCDEF";
+function URLEncode1() {
+    var plaintext = document.getElementById('textInput1').value;
 
-    var encoded = "";
-    for (var i = 0; i < plaintext.length; i++ ) {
-      var ch = plaintext.charAt(i);
-        if (ch == " ") {
-          encoded += "+";       // x-www-urlencoded, rather than %20
-      } else if (SAFECHARS.indexOf(ch) != -1) {
-          encoded += ch;
-      } else {
-          var charCode = ch.charCodeAt(0);
-        if (charCode > 255) {
-            alert( "Unicode Character '" 
-                          + ch 
-                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
-                    "(URL encoding only supports 8-bit characters.)\\n" +
-                "A space (+) will be substituted." );
-          encoded += "+";
-        } else {
-          encoded += "%";
-          encoded += HEX.charAt((charCode >> 4) & 0xF);
-          encoded += HEX.charAt(charCode & 0xF);
-        }
-      }
-    } // for
+    // URL Encoding (Percent Encoding) the Query String part of the full URL using encodeURIComponent
+        // The encodeURIComponent function fails to encode certain special characters - _ . ! ~ * ' ( ) ----- You have to manually specify conversion to corresponding UTF-8 Character
+        // For encodeURIComponent function to have full coverage of all special characters, coding below manually specifies conversion to UTF-8 for characters not natively supported
+        // Once encodeURIComponent function has full coverage of all special characters, any desired deviation from UTF-8 can be specified
+
+        // As per RFC 3986, certain special characters that are allowed in a URI (i.e. not URL encoded) are: hyphen ( - ), underscore ( _ ), period ( . ), and tilde ( ~ )
+    var encoded = encodeURIComponent(plaintext)
+        .replace(/%20/g, '+') // Convert %20 to + (For application/x-www-form-urlencoded, spaces are to be replaced by +) ----- If URL Encoding Desired, delete this line
+        .replace(/-/g, '-') // Convert - to - (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/-/g, '%2D')
+        .replace(/_/g, '_') // Convert _ to _ (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/_/g, '%5F')
+        .replace(/\./g, '.') // Convert . to . (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/\./g, '%2E')
+        .replace(/!/g, '%21') // Convert ! to %21
+        .replace(/~/g, '~') // Convert ~ to ~ (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/~/g, '%7E')
+        .replace(/\*/g, '%2A') // Convert * to %2A
+        .replace(/'/g, '%27') // Convert ' to %27
+        .replace(/\(/g, '%28') // Convert ( to %28
+        .replace(/\)/g, '%29'); // Convert ) to %29
 
     document.getElementById('textInput1').value = encoded;
-  } else {  // Modern browser mode
-    document.getElementById('textInput1').value = encodeURIComponent(plaintext);
-  }
-  document.getElementById('textInput1').select();
-  return false;
+    document.getElementById('textInput1').select();
+    return false;
 };
 
-function getInputValue( )
-{
-    let directLink = '';
-    let inputValue1 = document.getElementById('textInput1').value;
-    directLink = 'https://www.google.com/search?q=' + inputValue1 + '&uule=w+CAIQICIfTmV3IFlvcmssTmV3IFlvcmssVW5pdGVkIFN0YXRlcw&gl=us';
-    var plaintext = directLink;
-    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
-    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
-    document.getElementById('finalLink').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+function getInputValue1() {
+    let directLink1 = 'https://www.google.com/search?q=' + document.getElementById('textInput1').value + '&uule=w+CAIQICIfTmV3IFlvcmssTmV3IFlvcmssVW5pdGVkIFN0YXRlcw&gl=us';
+    generatedLink1 = directLink1; // Store the link in the global variable
+
+    var searchTypeImage = `${directLink1}&tbm=isch`;
+    var searchTypeVideos = `${directLink1}&tbm=vid`;
+    var searchTypeShopping = `${directLink1}&tbm=shop`;
+    var searchTypeNews = `${directLink1}&tbm=nws`;
+
+    document.getElementById('finalLink1').innerHTML = `
+    <strong><a href='${directLink1}' target='_blank'>Regular Google Search</a></strong><br><br>
+    <a href='${searchTypeImage}' target='_blank'>Google Image Search</a><br><br>
+    <a href='${searchTypeVideos}' target='_blank'>Google Videos Search</a><br><br>
+    <a href='${searchTypeShopping}' target='_blank'>Google Shopping Search</a><br><br>
+    <a href='${searchTypeNews}' target='_blank'>Google News Search</a>
+    `;
 
     document.getElementById("textInput1").value = "";
-};
-
-function copyToClipboard()
-{
-    let text = document.getElementById('finalLink').innerText;
-    event.preventDefault();
-    navigator.clipboard.writeText(text);
 }
 
 // United States (2)
 
-function URLEncode2( )
-{
-  var plaintext = document.getElementById('textInput2').value;
-  if (document.getElementById('RFC2396-2').checked) {  // OLD Browser mode
-    // The Javascript escape and unescape functions do not correspond
-    // with what browsers actually do...
-    var SAFECHARS = "0123456789" +          // Numeric
-            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
-            "abcdefghijklmnopqrstuvwxyz" +
-            "-_.!~*'()";          // RFC2396 Mark characters
-    var HEX = "0123456789ABCDEF";
+function URLEncode2() {
+    var plaintext = document.getElementById('textInput2').value;
 
-    var encoded = "";
-    for (var i = 0; i < plaintext.length; i++ ) {
-      var ch = plaintext.charAt(i);
-        if (ch == " ") {
-          encoded += "+";       // x-www-urlencoded, rather than %20
-      } else if (SAFECHARS.indexOf(ch) != -1) {
-          encoded += ch;
-      } else {
-          var charCode = ch.charCodeAt(0);
-        if (charCode > 255) {
-            alert( "Unicode Character '" 
-                          + ch 
-                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
-                    "(URL encoding only supports 8-bit characters.)\\n" +
-                "A space (+) will be substituted." );
-          encoded += "+";
-        } else {
-          encoded += "%";
-          encoded += HEX.charAt((charCode >> 4) & 0xF);
-          encoded += HEX.charAt(charCode & 0xF);
-        }
-      }
-    } // for
+    // URL Encoding (Percent Encoding) the Query String part of the full URL using encodeURIComponent
+    var encoded = encodeURIComponent(plaintext)
+        .replace(/%20/g, '+') // Convert %20 to + (For application/x-www-form-urlencoded, spaces are to be replaced by +) ----- If URL Encoding Desired, delete this line
+        .replace(/-/g, '-') // Convert - to - (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/-/g, '%2D')
+        .replace(/_/g, '_') // Convert _ to _ (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/_/g, '%5F')
+        .replace(/\./g, '.') // Convert . to . (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/\./g, '%2E')
+        .replace(/!/g, '%21') // Convert ! to %21
+        .replace(/~/g, '~') // Convert ~ to ~ (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/~/g, '%7E')
+        .replace(/\*/g, '%2A') // Convert * to %2A
+        .replace(/'/g, '%27') // Convert ' to %27
+        .replace(/\(/g, '%28') // Convert ( to %28
+        .replace(/\)/g, '%29'); // Convert ) to %29
 
     document.getElementById('textInput2').value = encoded;
-  } else {  // Modern browser mode
-    document.getElementById('textInput2').value = encodeURIComponent(plaintext);
-  }
-  document.getElementById('textInput2').select();
-  return false;
+    document.getElementById('textInput2').select();
+    return false;
 };
 
-function getInputValue2( )
-{
-    let directLink2 = '';
-    let inputValue2 = document.getElementById('textInput2').value;
-    directLink2 = 'https://www.google.com/search?q=' + inputValue2 + '&uule=w+CAIQICIfTmV3IFlvcmssTmV3IFlvcmssVW5pdGVkIFN0YXRlcw&gl=us&cr=countryUS';
-    var plaintext = directLink2;
-    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
-    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
-    document.getElementById('finalLink2').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+function getInputValue2() {
+    let directLink2 = 'https://www.google.com/search?q=' + document.getElementById('textInput2').value + '&uule=w+CAIQICIfTmV3IFlvcmssTmV3IFlvcmssVW5pdGVkIFN0YXRlcw&gl=us&cr=countryUS';
+    generatedLink2 = directLink2; // Store the link in the global variable
+
+    var searchTypeImage = `${directLink2}&tbm=isch`;
+    var searchTypeVideos = `${directLink2}&tbm=vid`;
+    var searchTypeShopping = `${directLink2}&tbm=shop`;
+    var searchTypeNews = `${directLink2}&tbm=nws`;
+
+    document.getElementById('finalLink2').innerHTML = `
+    <strong><a href='${directLink2}' target='_blank'>Regular Google Search</a></strong><br><br>
+    <a href='${searchTypeImage}' target='_blank'>Google Image Search</a><br><br>
+    <a href='${searchTypeVideos}' target='_blank'>Google Videos Search</a><br><br>
+    <a href='${searchTypeShopping}' target='_blank'>Google Shopping Search</a><br><br>
+    <a href='${searchTypeNews}' target='_blank'>Google News Search</a>
+    `;
 
     document.getElementById("textInput2").value = "";
-};
-
-function copyToClipboard2()
-{
-    let text2 = document.getElementById('finalLink2').innerText;
-    event.preventDefault();
-    navigator.clipboard.writeText(text2);
 }
 
 // United Kingdom (1)
 
-function URLEncode3( )
-{
-  var plaintext = document.getElementById('textInput3').value;
-  if (document.getElementById('RFC2396-3').checked) {  // OLD Browser mode
-    // The Javascript escape and unescape functions do not correspond
-    // with what browsers actually do...
-    var SAFECHARS = "0123456789" +          // Numeric
-            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
-            "abcdefghijklmnopqrstuvwxyz" +
-            "-_.!~*'()";          // RFC2396 Mark characters
-    var HEX = "0123456789ABCDEF";
+function URLEncode3() {
+    var plaintext = document.getElementById('textInput3').value;
 
-    var encoded = "";
-    for (var i = 0; i < plaintext.length; i++ ) {
-      var ch = plaintext.charAt(i);
-        if (ch == " ") {
-          encoded += "+";       // x-www-urlencoded, rather than %20
-      } else if (SAFECHARS.indexOf(ch) != -1) {
-          encoded += ch;
-      } else {
-          var charCode = ch.charCodeAt(0);
-        if (charCode > 255) {
-            alert( "Unicode Character '" 
-                          + ch 
-                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
-                    "(URL encoding only supports 8-bit characters.)\\n" +
-                "A space (+) will be substituted." );
-          encoded += "+";
-        } else {
-          encoded += "%";
-          encoded += HEX.charAt((charCode >> 4) & 0xF);
-          encoded += HEX.charAt(charCode & 0xF);
-        }
-      }
-    } // for
+    // URL Encoding (Percent Encoding) the Query String part of the full URL using encodeURIComponent
+    var encoded = encodeURIComponent(plaintext)
+        .replace(/%20/g, '+') // Convert %20 to + (For application/x-www-form-urlencoded, spaces are to be replaced by +) ----- If URL Encoding Desired, delete this line
+        .replace(/-/g, '-') // Convert - to - (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/-/g, '%2D')
+        .replace(/_/g, '_') // Convert _ to _ (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/_/g, '%5F')
+        .replace(/\./g, '.') // Convert . to . (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/\./g, '%2E')
+        .replace(/!/g, '%21') // Convert ! to %21
+        .replace(/~/g, '~') // Convert ~ to ~ (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/~/g, '%7E')
+        .replace(/\*/g, '%2A') // Convert * to %2A
+        .replace(/'/g, '%27') // Convert ' to %27
+        .replace(/\(/g, '%28') // Convert ( to %28
+        .replace(/\)/g, '%29'); // Convert ) to %29
 
     document.getElementById('textInput3').value = encoded;
-  } else {  // Modern browser mode
-    document.getElementById('textInput3').value = encodeURIComponent(plaintext);
-  }
-  document.getElementById('textInput3').select();
-  return false;
+    document.getElementById('textInput3').select();
+    return false;
 };
 
-function getInputValue3( )
-{
-    let directLink3 = '';
-    let inputValue3 = document.getElementById('textInput3').value;
-    directLink3 = 'https://www.google.com/search?q=' + inputValue3 + '&uule=w+CAIQICIdTG9uZG9uLEVuZ2xhbmQsVW5pdGVkIEtpbmdkb20&gl=uk';
-    var plaintext = directLink3;
-    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
-    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
-    document.getElementById('finalLink3').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+function getInputValue3() {
+  let directLink3 = 'https://www.google.com/search?q=' + document.getElementById('textInput3').value + '&uule=w+CAIQICIdTG9uZG9uLEVuZ2xhbmQsVW5pdGVkIEtpbmdkb20&gl=uk';
+  generatedLink3 = directLink3; // Store the link in the global variable
+
+    var searchTypeImage = `${directLink3}&tbm=isch`;
+    var searchTypeVideos = `${directLink3}&tbm=vid`;
+    var searchTypeShopping = `${directLink3}&tbm=shop`;
+    var searchTypeNews = `${directLink3}&tbm=nws`;
+
+    document.getElementById('finalLink3').innerHTML = `
+    <strong><a href='${directLink3}' target='_blank'>Regular Google Search</a></strong><br><br>
+    <a href='${searchTypeImage}' target='_blank'>Google Image Search</a><br><br>
+    <a href='${searchTypeVideos}' target='_blank'>Google Videos Search</a><br><br>
+    <a href='${searchTypeShopping}' target='_blank'>Google Shopping Search</a><br><br>
+    <a href='${searchTypeNews}' target='_blank'>Google News Search</a>
+    `;
 
     document.getElementById("textInput3").value = "";
-};
-
-function copyToClipboard3()
-{
-    let text3 = document.getElementById('finalLink3').innerText;
-    event.preventDefault();
-    navigator.clipboard.writeText(text3);
 }
 
 // United Kingdom (2)
 
-function URLEncode4( )
-{
-  var plaintext = document.getElementById('textInput4').value;
-  if (document.getElementById('RFC2396-4').checked) {  // OLD Browser mode
-    // The Javascript escape and unescape functions do not correspond
-    // with what browsers actually do...
-    var SAFECHARS = "0123456789" +          // Numeric
-            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
-            "abcdefghijklmnopqrstuvwxyz" +
-            "-_.!~*'()";          // RFC2396 Mark characters
-    var HEX = "0123456789ABCDEF";
+function URLEncode4() {
+    var plaintext = document.getElementById('textInput4').value;
 
-    var encoded = "";
-    for (var i = 0; i < plaintext.length; i++ ) {
-      var ch = plaintext.charAt(i);
-        if (ch == " ") {
-          encoded += "+";       // x-www-urlencoded, rather than %20
-      } else if (SAFECHARS.indexOf(ch) != -1) {
-          encoded += ch;
-      } else {
-          var charCode = ch.charCodeAt(0);
-        if (charCode > 255) {
-            alert( "Unicode Character '" 
-                          + ch 
-                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
-                    "(URL encoding only supports 8-bit characters.)\\n" +
-                "A space (+) will be substituted." );
-          encoded += "+";
-        } else {
-          encoded += "%";
-          encoded += HEX.charAt((charCode >> 4) & 0xF);
-          encoded += HEX.charAt(charCode & 0xF);
-        }
-      }
-    } // for
+    // URL Encoding (Percent Encoding) the Query String part of the full URL using encodeURIComponent
+    var encoded = encodeURIComponent(plaintext)
+        .replace(/%20/g, '+') // Convert %20 to + (For application/x-www-form-urlencoded, spaces are to be replaced by +) ----- If URL Encoding Desired, delete this line
+        .replace(/-/g, '-') // Convert - to - (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/-/g, '%2D')
+        .replace(/_/g, '_') // Convert _ to _ (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/_/g, '%5F')
+        .replace(/\./g, '.') // Convert . to . (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/\./g, '%2E')
+        .replace(/!/g, '%21') // Convert ! to %21
+        .replace(/~/g, '~') // Convert ~ to ~ (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/~/g, '%7E')
+        .replace(/\*/g, '%2A') // Convert * to %2A
+        .replace(/'/g, '%27') // Convert ' to %27
+        .replace(/\(/g, '%28') // Convert ( to %28
+        .replace(/\)/g, '%29'); // Convert ) to %29
 
     document.getElementById('textInput4').value = encoded;
-  } else {  // Modern browser mode
-    document.getElementById('textInput4').value = encodeURIComponent(plaintext);
-  }
-  document.getElementById('textInput4').select();
-  return false;
+    document.getElementById('textInput4').select();
+    return false;
 };
 
-function getInputValue4( )
-{
-    let directLink4 = '';
-    let inputValue4 = document.getElementById('textInput4').value;
-    directLink4 = 'https://www.google.com/search?q=' + inputValue4 + '&uule=w+CAIQICIdTG9uZG9uLEVuZ2xhbmQsVW5pdGVkIEtpbmdkb20&gl=uk&cr=countryUK';
-    var plaintext = directLink4;
-    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
-    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
-    document.getElementById('finalLink4').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+function getInputValue4() {
+    let directLink4 = 'https://www.google.com/search?q=' + document.getElementById('textInput4').value + '&uule=w+CAIQICIdTG9uZG9uLEVuZ2xhbmQsVW5pdGVkIEtpbmdkb20&gl=uk&cr=countryUK';
+    generatedLink4 = directLink4; // Store the link in the global variable
+
+    var searchTypeImage = `${directLink4}&tbm=isch`;
+    var searchTypeVideos = `${directLink4}&tbm=vid`;
+    var searchTypeShopping = `${directLink4}&tbm=shop`;
+    var searchTypeNews = `${directLink4}&tbm=nws`;
+
+    document.getElementById('finalLink4').innerHTML = `
+    <strong><a href='${directLink4}' target='_blank'>Regular Google Search</a></strong><br><br>
+    <a href='${searchTypeImage}' target='_blank'>Google Image Search</a><br><br>
+    <a href='${searchTypeVideos}' target='_blank'>Google Videos Search</a><br><br>
+    <a href='${searchTypeShopping}' target='_blank'>Google Shopping Search</a><br><br>
+    <a href='${searchTypeNews}' target='_blank'>Google News Search</a>
+    `;
 
     document.getElementById("textInput4").value = "";
-};
-
-function copyToClipboard4()
-{
-    let text4 = document.getElementById('finalLink4').innerText;
-    event.preventDefault();
-    navigator.clipboard.writeText(text4);
 }
 
 // Germany (1)
 
-function URLEncode5( )
-{
-  var plaintext = document.getElementById('textInput5').value;
-  if (document.getElementById('RFC2396-5').checked) {  // OLD Browser mode
-    // The Javascript escape and unescape functions do not correspond
-    // with what browsers actually do...
-    var SAFECHARS = "0123456789" +          // Numeric
-            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
-            "abcdefghijklmnopqrstuvwxyz" +
-            "-_.!~*'()";          // RFC2396 Mark characters
-    var HEX = "0123456789ABCDEF";
+function URLEncode5() {
+    var plaintext = document.getElementById('textInput5').value;
 
-    var encoded = "";
-    for (var i = 0; i < plaintext.length; i++ ) {
-      var ch = plaintext.charAt(i);
-        if (ch == " ") {
-          encoded += "+";       // x-www-urlencoded, rather than %20
-      } else if (SAFECHARS.indexOf(ch) != -1) {
-          encoded += ch;
-      } else {
-          var charCode = ch.charCodeAt(0);
-        if (charCode > 255) {
-            alert( "Unicode Character '" 
-                          + ch 
-                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
-                    "(URL encoding only supports 8-bit characters.)\\n" +
-                "A space (+) will be substituted." );
-          encoded += "+";
-        } else {
-          encoded += "%";
-          encoded += HEX.charAt((charCode >> 4) & 0xF);
-          encoded += HEX.charAt(charCode & 0xF);
-        }
-      }
-    } // for
+    // URL Encoding (Percent Encoding) the Query String part of the full URL using encodeURIComponent
+    var encoded = encodeURIComponent(plaintext)
+        .replace(/%20/g, '+') // Convert %20 to + (For application/x-www-form-urlencoded, spaces are to be replaced by +) ----- If URL Encoding Desired, delete this line
+        .replace(/-/g, '-') // Convert - to - (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/-/g, '%2D')
+        .replace(/_/g, '_') // Convert _ to _ (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/_/g, '%5F')
+        .replace(/\./g, '.') // Convert . to . (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/\./g, '%2E')
+        .replace(/!/g, '%21') // Convert ! to %21
+        .replace(/~/g, '~') // Convert ~ to ~ (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/~/g, '%7E')
+        .replace(/\*/g, '%2A') // Convert * to %2A
+        .replace(/'/g, '%27') // Convert ' to %27
+        .replace(/\(/g, '%28') // Convert ( to %28
+        .replace(/\)/g, '%29'); // Convert ) to %29
 
     document.getElementById('textInput5').value = encoded;
-  } else {  // Modern browser mode
-    document.getElementById('textInput5').value = encodeURIComponent(plaintext);
-  }
-  document.getElementById('textInput5').select();
-  return false;
+    document.getElementById('textInput5').select();
+    return false;
 };
 
-function getInputValue5( )
-{
-    let directLink5 = '';
-    let inputValue5 = document.getElementById('textInput5').value;
-    directLink5 = 'https://www.google.com/search?q=' + inputValue5 + '&uule=w+CAIQICIVQmVybGluLEJlcmxpbixHZXJtYW55&gl=de';
-    var plaintext = directLink5;
-    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
-    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
-    document.getElementById('finalLink5').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+function getInputValue5() {
+    let directLink5 = 'https://www.google.com/search?q=' + document.getElementById('textInput5').value + '&uule=w+CAIQICIVQmVybGluLEJlcmxpbixHZXJtYW55&gl=de';
+    generatedLink5 = directLink5; // Store the link in the global variable
+
+    var searchTypeImage = `${directLink5}&tbm=isch`;
+    var searchTypeVideos = `${directLink5}&tbm=vid`;
+    var searchTypeShopping = `${directLink5}&tbm=shop`;
+    var searchTypeNews = `${directLink5}&tbm=nws`;
+
+    document.getElementById('finalLink5').innerHTML = `
+    <strong><a href='${directLink5}' target='_blank'>Regular Google Search</a></strong><br><br>
+    <a href='${searchTypeImage}' target='_blank'>Google Image Search</a><br><br>
+    <a href='${searchTypeVideos}' target='_blank'>Google Videos Search</a><br><br>
+    <a href='${searchTypeShopping}' target='_blank'>Google Shopping Search</a><br><br>
+    <a href='${searchTypeNews}' target='_blank'>Google News Search</a>
+    `;
 
     document.getElementById("textInput5").value = "";
-};
-
-function copyToClipboard5()
-{
-    let text5 = document.getElementById('finalLink5').innerText;
-    event.preventDefault();
-    navigator.clipboard.writeText(text5);
 }
 
 // Germany (2)
 
-function URLEncode6( )
-{
-  var plaintext = document.getElementById('textInput6').value;
-  if (document.getElementById('RFC2396-6').checked) {  // OLD Browser mode
-    // The Javascript escape and unescape functions do not correspond
-    // with what browsers actually do...
-    var SAFECHARS = "0123456789" +          // Numeric
-            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
-            "abcdefghijklmnopqrstuvwxyz" +
-            "-_.!~*'()";          // RFC2396 Mark characters
-    var HEX = "0123456789ABCDEF";
+function URLEncode6() {
+    var plaintext = document.getElementById('textInput6').value;
 
-    var encoded = "";
-    for (var i = 0; i < plaintext.length; i++ ) {
-      var ch = plaintext.charAt(i);
-        if (ch == " ") {
-          encoded += "+";       // x-www-urlencoded, rather than %20
-      } else if (SAFECHARS.indexOf(ch) != -1) {
-          encoded += ch;
-      } else {
-          var charCode = ch.charCodeAt(0);
-        if (charCode > 255) {
-            alert( "Unicode Character '" 
-                          + ch 
-                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
-                    "(URL encoding only supports 8-bit characters.)\\n" +
-                "A space (+) will be substituted." );
-          encoded += "+";
-        } else {
-          encoded += "%";
-          encoded += HEX.charAt((charCode >> 4) & 0xF);
-          encoded += HEX.charAt(charCode & 0xF);
-        }
-      }
-    } // for
+    // URL Encoding (Percent Encoding) the Query String part of the full URL using encodeURIComponent
+    var encoded = encodeURIComponent(plaintext)
+        .replace(/%20/g, '+') // Convert %20 to + (For application/x-www-form-urlencoded, spaces are to be replaced by +) ----- If URL Encoding Desired, delete this line
+        .replace(/-/g, '-') // Convert - to - (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/-/g, '%2D')
+        .replace(/_/g, '_') // Convert _ to _ (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/_/g, '%5F')
+        .replace(/\./g, '.') // Convert . to . (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/\./g, '%2E')
+        .replace(/!/g, '%21') // Convert ! to %21
+        .replace(/~/g, '~') // Convert ~ to ~ (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/~/g, '%7E')
+        .replace(/\*/g, '%2A') // Convert * to %2A
+        .replace(/'/g, '%27') // Convert ' to %27
+        .replace(/\(/g, '%28') // Convert ( to %28
+        .replace(/\)/g, '%29'); // Convert ) to %29
 
     document.getElementById('textInput6').value = encoded;
-  } else {  // Modern browser mode
-    document.getElementById('textInput6').value = encodeURIComponent(plaintext);
-  }
-  document.getElementById('textInput6').select();
-  return false;
+    document.getElementById('textInput6').select();
+    return false;
 };
 
-function getInputValue6( )
-{
-    let directLink6 = '';
-    let inputValue6 = document.getElementById('textInput6').value;
-    directLink6 = 'https://www.google.com/search?q=' + inputValue6 + '&uule=w+CAIQICIVQmVybGluLEJlcmxpbixHZXJtYW55&gl=de&cr=countryDE';
-    var plaintext = directLink6;
-    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
-    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
-    document.getElementById('finalLink6').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+function getInputValue6() {
+    let directLink6 = 'https://www.google.com/search?q=' + document.getElementById('textInput6').value + '&uule=w+CAIQICIVQmVybGluLEJlcmxpbixHZXJtYW55&gl=de&cr=countryDE';
+    generatedLink6 = directLink6; // Store the link in the global variable
+
+    var searchTypeImage = `${directLink6}&tbm=isch`;
+    var searchTypeVideos = `${directLink6}&tbm=vid`;
+    var searchTypeShopping = `${directLink6}&tbm=shop`;
+    var searchTypeNews = `${directLink6}&tbm=nws`;
+
+    document.getElementById('finalLink6').innerHTML = `
+    <strong><a href='${directLink6}' target='_blank'>Regular Google Search</a></strong><br><br>
+    <a href='${searchTypeImage}' target='_blank'>Google Image Search</a><br><br>
+    <a href='${searchTypeVideos}' target='_blank'>Google Videos Search</a><br><br>
+    <a href='${searchTypeShopping}' target='_blank'>Google Shopping Search</a><br><br>
+    <a href='${searchTypeNews}' target='_blank'>Google News Search</a>
+    `;
 
     document.getElementById("textInput6").value = "";
-};
-
-function copyToClipboard6()
-{
-    let text6 = document.getElementById('finalLink6').innerText;
-    event.preventDefault();
-    navigator.clipboard.writeText(text6);
 }
 
 // France (1)
 
-function URLEncode7( )
-{
-  var plaintext = document.getElementById('textInput7').value;
-  if (document.getElementById('RFC2396-7').checked) {  // OLD Browser mode
-    // The Javascript escape and unescape functions do not correspond
-    // with what browsers actually do...
-    var SAFECHARS = "0123456789" +          // Numeric
-            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
-            "abcdefghijklmnopqrstuvwxyz" +
-            "-_.!~*'()";          // RFC2396 Mark characters
-    var HEX = "0123456789ABCDEF";
+function URLEncode7() {
+    var plaintext = document.getElementById('textInput7').value;
 
-    var encoded = "";
-    for (var i = 0; i < plaintext.length; i++ ) {
-      var ch = plaintext.charAt(i);
-        if (ch == " ") {
-          encoded += "+";       // x-www-urlencoded, rather than %20
-      } else if (SAFECHARS.indexOf(ch) != -1) {
-          encoded += ch;
-      } else {
-          var charCode = ch.charCodeAt(0);
-        if (charCode > 255) {
-            alert( "Unicode Character '" 
-                          + ch 
-                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
-                    "(URL encoding only supports 8-bit characters.)\\n" +
-                "A space (+) will be substituted." );
-          encoded += "+";
-        } else {
-          encoded += "%";
-          encoded += HEX.charAt((charCode >> 4) & 0xF);
-          encoded += HEX.charAt(charCode & 0xF);
-        }
-      }
-    } // for
+    // URL Encoding (Percent Encoding) the Query String part of the full URL using encodeURIComponent
+    var encoded = encodeURIComponent(plaintext)
+        .replace(/%20/g, '+') // Convert %20 to + (For application/x-www-form-urlencoded, spaces are to be replaced by +) ----- If URL Encoding Desired, delete this line
+        .replace(/-/g, '-') // Convert - to - (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/-/g, '%2D')
+        .replace(/_/g, '_') // Convert _ to _ (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/_/g, '%5F')
+        .replace(/\./g, '.') // Convert . to . (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/\./g, '%2E')
+        .replace(/!/g, '%21') // Convert ! to %21
+        .replace(/~/g, '~') // Convert ~ to ~ (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/~/g, '%7E')
+        .replace(/\*/g, '%2A') // Convert * to %2A
+        .replace(/'/g, '%27') // Convert ' to %27
+        .replace(/\(/g, '%28') // Convert ( to %28
+        .replace(/\)/g, '%29'); // Convert ) to %29
 
     document.getElementById('textInput7').value = encoded;
-  } else {  // Modern browser mode
-    document.getElementById('textInput7').value = encodeURIComponent(plaintext);
-  }
-  document.getElementById('textInput7').select();
-  return false;
+    document.getElementById('textInput7').select();
+    return false;
 };
 
-function getInputValue7( )
-{
-    let directLink7 = '';
-    let inputValue7 = document.getElementById('textInput7').value;
-    directLink7 = 'https://www.google.com/search?q=' + inputValue7 + '&uule=w+CAIQICIgUGFyaXMsUGFyaXMsSWxlLWRlLUZyYW5jZSxGcmFuY2U&gl=fr';
-    var plaintext = directLink7;
-    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
-    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
-    document.getElementById('finalLink7').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+function getInputValue7() {
+    let directLink7 = 'https://www.google.com/search?q=' + document.getElementById('textInput7').value + '&uule=w+CAIQICIgUGFyaXMsUGFyaXMsSWxlLWRlLUZyYW5jZSxGcmFuY2U&gl=fr';
+    generatedLink7 = directLink7; // Store the link in the global variable
+
+    var searchTypeImage = `${directLink7}&tbm=isch`;
+    var searchTypeVideos = `${directLink7}&tbm=vid`;
+    var searchTypeShopping = `${directLink7}&tbm=shop`;
+    var searchTypeNews = `${directLink7}&tbm=nws`;
+
+    document.getElementById('finalLink7').innerHTML = `
+    <strong><a href='${directLink7}' target='_blank'>Regular Google Search</a></strong><br><br>
+    <a href='${searchTypeImage}' target='_blank'>Google Image Search</a><br><br>
+    <a href='${searchTypeVideos}' target='_blank'>Google Videos Search</a><br><br>
+    <a href='${searchTypeShopping}' target='_blank'>Google Shopping Search</a><br><br>
+    <a href='${searchTypeNews}' target='_blank'>Google News Search</a>
+    `;
 
     document.getElementById("textInput7").value = "";
-};
-
-function copyToClipboard7()
-{
-    let text7 = document.getElementById('finalLink7').innerText;
-    event.preventDefault();
-    navigator.clipboard.writeText(text7);
 }
 
 // France (2)
 
-function URLEncode8( )
-{
-  var plaintext = document.getElementById('textInput8').value;
-  if (document.getElementById('RFC2396-8').checked) {  // OLD Browser mode
-    // The Javascript escape and unescape functions do not correspond
-    // with what browsers actually do...
-    var SAFECHARS = "0123456789" +          // Numeric
-            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
-            "abcdefghijklmnopqrstuvwxyz" +
-            "-_.!~*'()";          // RFC2396 Mark characters
-    var HEX = "0123456789ABCDEF";
+function URLEncode8() {
+    var plaintext = document.getElementById('textInput8').value;
 
-    var encoded = "";
-    for (var i = 0; i < plaintext.length; i++ ) {
-      var ch = plaintext.charAt(i);
-        if (ch == " ") {
-          encoded += "+";       // x-www-urlencoded, rather than %20
-      } else if (SAFECHARS.indexOf(ch) != -1) {
-          encoded += ch;
-      } else {
-          var charCode = ch.charCodeAt(0);
-        if (charCode > 255) {
-            alert( "Unicode Character '" 
-                          + ch 
-                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
-                    "(URL encoding only supports 8-bit characters.)\\n" +
-                "A space (+) will be substituted." );
-          encoded += "+";
-        } else {
-          encoded += "%";
-          encoded += HEX.charAt((charCode >> 4) & 0xF);
-          encoded += HEX.charAt(charCode & 0xF);
-        }
-      }
-    } // for
+    // URL Encoding (Percent Encoding) the Query String part of the full URL using encodeURIComponent
+    var encoded = encodeURIComponent(plaintext)
+        .replace(/%20/g, '+') // Convert %20 to + (For application/x-www-form-urlencoded, spaces are to be replaced by +) ----- If URL Encoding Desired, delete this line
+        .replace(/-/g, '-') // Convert - to - (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/-/g, '%2D')
+        .replace(/_/g, '_') // Convert _ to _ (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/_/g, '%5F')
+        .replace(/\./g, '.') // Convert . to . (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/\./g, '%2E')
+        .replace(/!/g, '%21') // Convert ! to %21
+        .replace(/~/g, '~') // Convert ~ to ~ (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/~/g, '%7E')
+        .replace(/\*/g, '%2A') // Convert * to %2A
+        .replace(/'/g, '%27') // Convert ' to %27
+        .replace(/\(/g, '%28') // Convert ( to %28
+        .replace(/\)/g, '%29'); // Convert ) to %29
 
     document.getElementById('textInput8').value = encoded;
-  } else {  // Modern browser mode
-    document.getElementById('textInput8').value = encodeURIComponent(plaintext);
-  }
-  document.getElementById('textInput8').select();
-  return false;
+    document.getElementById('textInput8').select();
+    return false;
 };
 
-function getInputValue8( )
-{
-    let directLink8 = '';
-    let inputValue8 = document.getElementById('textInput8').value;
-    directLink8 = 'https://www.google.com/search?q=' + inputValue8 + '&uule=w+CAIQICIgUGFyaXMsUGFyaXMsSWxlLWRlLUZyYW5jZSxGcmFuY2U&gl=fr&cr=countryFR';
-    var plaintext = directLink8;
-    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
-    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
-    document.getElementById('finalLink8').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+function getInputValue8() {
+    let directLink8 = 'https://www.google.com/search?q=' + document.getElementById('textInput8').value + '&uule=w+CAIQICIgUGFyaXMsUGFyaXMsSWxlLWRlLUZyYW5jZSxGcmFuY2U&gl=fr&cr=countryFR';
+    generatedLink0 = directLink0; // Store the link in the global variable
+
+    var searchTypeImage = `${directLink8}&tbm=isch`;
+    var searchTypeVideos = `${directLink8}&tbm=vid`;
+    var searchTypeShopping = `${directLink8}&tbm=shop`;
+    var searchTypeNews = `${directLink8}&tbm=nws`;
+
+    document.getElementById('finalLink8').innerHTML = `
+    <strong><a href='${directLink8}' target='_blank'>Regular Google Search</a></strong><br><br>
+    <a href='${searchTypeImage}' target='_blank'>Google Image Search</a><br><br>
+    <a href='${searchTypeVideos}' target='_blank'>Google Videos Search</a><br><br>
+    <a href='${searchTypeShopping}' target='_blank'>Google Shopping Search</a><br><br>
+    <a href='${searchTypeNews}' target='_blank'>Google News Search</a>
+    `;
 
     document.getElementById("textInput8").value = "";
-};
-
-function copyToClipboard8()
-{
-    let text8 = document.getElementById('finalLink8').innerText;
-    event.preventDefault();
-    navigator.clipboard.writeText(text8);
 }
 
 // Japan (1)
 
-function URLEncode9( )
-{
-  var plaintext = document.getElementById('textInput9').value;
-  if (document.getElementById('RFC2396-9').checked) {  // OLD Browser mode
-    // The Javascript escape and unescape functions do not correspond
-    // with what browsers actually do...
-    var SAFECHARS = "0123456789" +          // Numeric
-            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
-            "abcdefghijklmnopqrstuvwxyz" +
-            "-_.!~*'()";          // RFC2396 Mark characters
-    var HEX = "0123456789ABCDEF";
+function URLEncode9() {
+    var plaintext = document.getElementById('textInput9').value;
 
-    var encoded = "";
-    for (var i = 0; i < plaintext.length; i++ ) {
-      var ch = plaintext.charAt(i);
-        if (ch == " ") {
-          encoded += "+";       // x-www-urlencoded, rather than %20
-      } else if (SAFECHARS.indexOf(ch) != -1) {
-          encoded += ch;
-      } else {
-          var charCode = ch.charCodeAt(0);
-        if (charCode > 255) {
-            alert( "Unicode Character '" 
-                          + ch 
-                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
-                    "(URL encoding only supports 8-bit characters.)\\n" +
-                "A space (+) will be substituted." );
-          encoded += "+";
-        } else {
-          encoded += "%";
-          encoded += HEX.charAt((charCode >> 4) & 0xF);
-          encoded += HEX.charAt(charCode & 0xF);
-        }
-      }
-    } // for
+    // URL Encoding (Percent Encoding) the Query String part of the full URL using encodeURIComponent
+    var encoded = encodeURIComponent(plaintext)
+        .replace(/%20/g, '+') // Convert %20 to + (For application/x-www-form-urlencoded, spaces are to be replaced by +) ----- If URL Encoding Desired, delete this line
+        .replace(/-/g, '-') // Convert - to - (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/-/g, '%2D')
+        .replace(/_/g, '_') // Convert _ to _ (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/_/g, '%5F')
+        .replace(/\./g, '.') // Convert . to . (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/\./g, '%2E')
+        .replace(/!/g, '%21') // Convert ! to %21
+        .replace(/~/g, '~') // Convert ~ to ~ (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/~/g, '%7E')
+        .replace(/\*/g, '%2A') // Convert * to %2A
+        .replace(/'/g, '%27') // Convert ' to %27
+        .replace(/\(/g, '%28') // Convert ( to %28
+        .replace(/\)/g, '%29'); // Convert ) to %29
 
     document.getElementById('textInput9').value = encoded;
-  } else {  // Modern browser mode
-    document.getElementById('textInput9').value = encodeURIComponent(plaintext);
-  }
-  document.getElementById('textInput9').select();
-  return false;
+    document.getElementById('textInput9').select();
+    return false;
 };
 
-function getInputValue9( )
-{
-    let directLink9 = '';
-    let inputValue9 = document.getElementById('textInput9').value;
-    directLink9 = 'https://www.google.com/search?q=' + inputValue9 + '&uule=w+CAIQICILVG9reW8sSmFwYW4&gl=jp';
-    var plaintext = directLink9;
-    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
-    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
-    document.getElementById('finalLink9').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+function getInputValue9() {
+    let directLink9 = 'https://www.google.com/search?q=' + document.getElementById('textInput9').value + '&uule=w+CAIQICILVG9reW8sSmFwYW4&gl=jp';
+    generatedLink9 = directLink9; // Store the link in the global variable
+
+    var searchTypeImage = `${directLink9}&tbm=isch`;
+    var searchTypeVideos = `${directLink9}&tbm=vid`;
+    var searchTypeShopping = `${directLink9}&tbm=shop`;
+    var searchTypeNews = `${directLink9}&tbm=nws`;
+
+    document.getElementById('finalLink9').innerHTML = `
+    <strong><a href='${directLink9}' target='_blank'>Regular Google Search</a></strong><br><br>
+    <a href='${searchTypeImage}' target='_blank'>Google Image Search</a><br><br>
+    <a href='${searchTypeVideos}' target='_blank'>Google Videos Search</a><br><br>
+    <a href='${searchTypeShopping}' target='_blank'>Google Shopping Search</a><br><br>
+    <a href='${searchTypeNews}' target='_blank'>Google News Search</a>
+    `;
 
     document.getElementById("textInput9").value = "";
-};
-
-function copyToClipboard9()
-{
-    let text9 = document.getElementById('finalLink9').innerText;
-    event.preventDefault();
-    navigator.clipboard.writeText(text9);
 }
 
 // Japan (2)
 
-function URLEncode10( )
-{
-  var plaintext = document.getElementById('textInput10').value;
-  if (document.getElementById('RFC2396-10').checked) {  // OLD Browser mode
-    // The Javascript escape and unescape functions do not correspond
-    // with what browsers actually do...
-    var SAFECHARS = "0123456789" +          // Numeric
-            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
-            "abcdefghijklmnopqrstuvwxyz" +
-            "-_.!~*'()";          // RFC2396 Mark characters
-    var HEX = "0123456789ABCDEF";
+function URLEncode10() {
+    var plaintext = document.getElementById('textInput10').value;
 
-    var encoded = "";
-    for (var i = 0; i < plaintext.length; i++ ) {
-      var ch = plaintext.charAt(i);
-        if (ch == " ") {
-          encoded += "+";       // x-www-urlencoded, rather than %20
-      } else if (SAFECHARS.indexOf(ch) != -1) {
-          encoded += ch;
-      } else {
-          var charCode = ch.charCodeAt(0);
-        if (charCode > 255) {
-            alert( "Unicode Character '" 
-                          + ch 
-                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
-                    "(URL encoding only supports 8-bit characters.)\\n" +
-                "A space (+) will be substituted." );
-          encoded += "+";
-        } else {
-          encoded += "%";
-          encoded += HEX.charAt((charCode >> 4) & 0xF);
-          encoded += HEX.charAt(charCode & 0xF);
-        }
-      }
-    } // for
+    // URL Encoding (Percent Encoding) the Query String part of the full URL using encodeURIComponent
+    var encoded = encodeURIComponent(plaintext)
+        .replace(/%20/g, '+') // Convert %20 to + (For application/x-www-form-urlencoded, spaces are to be replaced by +) ----- If URL Encoding Desired, delete this line
+        .replace(/-/g, '-') // Convert - to - (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/-/g, '%2D')
+        .replace(/_/g, '_') // Convert _ to _ (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/_/g, '%5F')
+        .replace(/\./g, '.') // Convert . to . (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/\./g, '%2E')
+        .replace(/!/g, '%21') // Convert ! to %21
+        .replace(/~/g, '~') // Convert ~ to ~ (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/~/g, '%7E')
+        .replace(/\*/g, '%2A') // Convert * to %2A
+        .replace(/'/g, '%27') // Convert ' to %27
+        .replace(/\(/g, '%28') // Convert ( to %28
+        .replace(/\)/g, '%29'); // Convert ) to %29
 
     document.getElementById('textInput10').value = encoded;
-  } else {  // Modern browser mode
-    document.getElementById('textInput10').value = encodeURIComponent(plaintext);
-  }
-  document.getElementById('textInput10').select();
-  return false;
+    document.getElementById('textInput10').select();
+    return false;
 };
 
-function getInputValue10( )
-{
-    let directLink10 = '';
-    let inputValue10 = document.getElementById('textInput10').value;
-    directLink10 = 'https://www.google.com/search?q=' + inputValue10 + '&uule=w+CAIQICILVG9reW8sSmFwYW4&gl=jp&cr=countryJP';
-    var plaintext = directLink10;
-    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
-    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
-    document.getElementById('finalLink10').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+function getInputValue10() {
+    let directLink10 = 'https://www.google.com/search?q=' + document.getElementById('textInput10').value + '&uule=w+CAIQICILVG9reW8sSmFwYW4&gl=jp&cr=countryJP';
+    generatedLink10 = directLink10; // Store the link in the global variable
+
+    var searchTypeImage = `${directLink10}&tbm=isch`;
+    var searchTypeVideos = `${directLink10}&tbm=vid`;
+    var searchTypeShopping = `${directLink10}&tbm=shop`;
+    var searchTypeNews = `${directLink10}&tbm=nws`;
+
+    document.getElementById('finalLink10').innerHTML = `
+    <strong><a href='${directLink10}' target='_blank'>Regular Google Search</a></strong><br><br>
+    <a href='${searchTypeImage}' target='_blank'>Google Image Search</a><br><br>
+    <a href='${searchTypeVideos}' target='_blank'>Google Videos Search</a><br><br>
+    <a href='${searchTypeShopping}' target='_blank'>Google Shopping Search</a><br><br>
+    <a href='${searchTypeNews}' target='_blank'>Google News Search</a>
+    `;
 
     document.getElementById("textInput10").value = "";
-};
-
-function copyToClipboard10()
-{
-    let text10 = document.getElementById('finalLink10').innerText;
-    event.preventDefault();
-    navigator.clipboard.writeText(text10);
 }
 
 // South Korea (1)
 
-function URLEncode11( )
-{
+function URLEncode11() {
   var plaintext = document.getElementById('textInput11').value;
-  if (document.getElementById('RFC2396-11').checked) {  // OLD Browser mode
-    // The Javascript escape and unescape functions do not correspond
-    // with what browsers actually do...
-    var SAFECHARS = "0123456789" +          // Numeric
-            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
-            "abcdefghijklmnopqrstuvwxyz" +
-            "-_.!~*'()";          // RFC2396 Mark characters
-    var HEX = "0123456789ABCDEF";
 
-    var encoded = "";
-    for (var i = 0; i < plaintext.length; i++ ) {
-      var ch = plaintext.charAt(i);
-        if (ch == " ") {
-          encoded += "+";       // x-www-urlencoded, rather than %20
-      } else if (SAFECHARS.indexOf(ch) != -1) {
-          encoded += ch;
-      } else {
-          var charCode = ch.charCodeAt(0);
-        if (charCode > 255) {
-            alert( "Unicode Character '" 
-                          + ch 
-                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
-                    "(URL encoding only supports 8-bit characters.)\\n" +
-                "A space (+) will be substituted." );
-          encoded += "+";
-        } else {
-          encoded += "%";
-          encoded += HEX.charAt((charCode >> 4) & 0xF);
-          encoded += HEX.charAt(charCode & 0xF);
-        }
-      }
-    } // for
+    // URL Encoding (Percent Encoding) the Query String part of the full URL using encodeURIComponent
+    var encoded = encodeURIComponent(plaintext)
+        .replace(/%20/g, '+') // Convert %20 to + (For application/x-www-form-urlencoded, spaces are to be replaced by +) ----- If URL Encoding Desired, delete this line
+        .replace(/-/g, '-') // Convert - to - (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/-/g, '%2D')
+        .replace(/_/g, '_') // Convert _ to _ (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/_/g, '%5F')
+        .replace(/\./g, '.') // Convert . to . (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/\./g, '%2E')
+        .replace(/!/g, '%21') // Convert ! to %21
+        .replace(/~/g, '~') // Convert ~ to ~ (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/~/g, '%7E')
+        .replace(/\*/g, '%2A') // Convert * to %2A
+        .replace(/'/g, '%27') // Convert ' to %27
+        .replace(/\(/g, '%28') // Convert ( to %28
+        .replace(/\)/g, '%29'); // Convert ) to %29
 
     document.getElementById('textInput11').value = encoded;
-  } else {  // Modern browser mode
-    document.getElementById('textInput11').value = encodeURIComponent(plaintext);
-  }
-  document.getElementById('textInput11').select();
-  return false;
+    document.getElementById('textInput11').select();
+    return false;
 };
 
-function getInputValue11( )
-{
-    let directLink11 = '';
-    let inputValue11 = document.getElementById('textInput11').value;
-    directLink11 = 'https://www.google.com/search?q=' + inputValue11 + '&uule=w+CAIQICIXU2VvdWwsU2VvdWwsU291dGggS29yZWE&gl=kr';
-    var plaintext = directLink11;
-    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
-    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
-    document.getElementById('finalLink11').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+function getInputValue11() {
+  let directLink11 = 'https://www.google.com/search?q=' + document.getElementById('textInput11').value + '&uule=w+CAIQICIXU2VvdWwsU2VvdWwsU291dGggS29yZWE&gl=kr';
+  generatedLink11 = directLink11; // Store the link in the global variable
+
+  var searchTypeImage = `${directLink11}&tbm=isch`;
+    var searchTypeVideos = `${directLink11}&tbm=vid`;
+    var searchTypeShopping = `${directLink11}&tbm=shop`;
+    var searchTypeNews = `${directLink11}&tbm=nws`;
+
+    document.getElementById('finalLink11').innerHTML = `
+    <strong><a href='${directLink11}' target='_blank'>Regular Google Search</a></strong><br><br>
+    <a href='${searchTypeImage}' target='_blank'>Google Image Search</a><br><br>
+    <a href='${searchTypeVideos}' target='_blank'>Google Videos Search</a><br><br>
+    <a href='${searchTypeShopping}' target='_blank'>Google Shopping Search</a><br><br>
+    <a href='${searchTypeNews}' target='_blank'>Google News Search</a>
+    `;
 
     document.getElementById("textInput11").value = "";
-};
-
-function copyToClipboard11()
-{
-    let text11 = document.getElementById('finalLink11').innerText;
-    event.preventDefault();
-    navigator.clipboard.writeText(text11);
 }
 
 // South Korea (2)
 
-function URLEncode12( )
-{
+function URLEncode12() {
   var plaintext = document.getElementById('textInput12').value;
-  if (document.getElementById('RFC2396-12').checked) {  // OLD Browser mode
-    // The Javascript escape and unescape functions do not correspond
-    // with what browsers actually do...
-    var SAFECHARS = "0123456789" +          // Numeric
-            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +  // Alphabetic
-            "abcdefghijklmnopqrstuvwxyz" +
-            "-_.!~*'()";          // RFC2396 Mark characters
-    var HEX = "0123456789ABCDEF";
 
-    var encoded = "";
-    for (var i = 0; i < plaintext.length; i++ ) {
-      var ch = plaintext.charAt(i);
-        if (ch == " ") {
-          encoded += "+";       // x-www-urlencoded, rather than %20
-      } else if (SAFECHARS.indexOf(ch) != -1) {
-          encoded += ch;
-      } else {
-          var charCode = ch.charCodeAt(0);
-        if (charCode > 255) {
-            alert( "Unicode Character '" 
-                          + ch 
-                          + "' cannot be encoded using standard RFC2396 encoding.\\n" +
-                    "(URL encoding only supports 8-bit characters.)\\n" +
-                "A space (+) will be substituted." );
-          encoded += "+";
-        } else {
-          encoded += "%";
-          encoded += HEX.charAt((charCode >> 4) & 0xF);
-          encoded += HEX.charAt(charCode & 0xF);
-        }
-      }
-    } // for
+    // URL Encoding (Percent Encoding) the Query String part of the full URL using encodeURIComponent
+    var encoded = encodeURIComponent(plaintext)
+        .replace(/%20/g, '+') // Convert %20 to + (For application/x-www-form-urlencoded, spaces are to be replaced by +) ----- If URL Encoding Desired, delete this line
+        .replace(/-/g, '-') // Convert - to - (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/-/g, '%2D')
+        .replace(/_/g, '_') // Convert _ to _ (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/_/g, '%5F')
+        .replace(/\./g, '.') // Convert . to . (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/\./g, '%2E')
+        .replace(/!/g, '%21') // Convert ! to %21
+        .replace(/~/g, '~') // Convert ~ to ~ (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/~/g, '%7E')
+        .replace(/\*/g, '%2A') // Convert * to %2A
+        .replace(/'/g, '%27') // Convert ' to %27
+        .replace(/\(/g, '%28') // Convert ( to %28
+        .replace(/\)/g, '%29'); // Convert ) to %29
 
     document.getElementById('textInput12').value = encoded;
-  } else {  // Modern browser mode
-    document.getElementById('textInput12').value = encodeURIComponent(plaintext);
-  }
-  document.getElementById('textInput12').select();
-  return false;
+    document.getElementById('textInput12').select();
+    return false;
 };
 
-function getInputValue12( )
-{
-    let directLink12 = '';
-    let inputValue12 = document.getElementById('textInput12').value;
-    directLink12 = 'https://www.google.com/search?q=' + inputValue12 + '&uule=w+CAIQICIXU2VvdWwsU2VvdWwsU291dGggS29yZWE&gl=kr&cr=countryKR';
-    var plaintext = directLink12;
-    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-    var plaintext1=plaintext.replace(exp, "<a href='$1'>$1</a>");
-    var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
-    document.getElementById('finalLink12').innerHTML=plaintext1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+function getInputValue12() {
+    let directLink12 = 'https://www.google.com/search?q=' + document.getElementById('textInput12').value + '&uule=w+CAIQICIXU2VvdWwsU2VvdWwsU291dGggS29yZWE&gl=kr&cr=countryKR';
+    generatedLink12 = directLink12; // Store the link in the global variable
+
+    var searchTypeImage = `${directLink12}&tbm=isch`;
+    var searchTypeVideos = `${directLink12}&tbm=vid`;
+    var searchTypeShopping = `${directLink12}&tbm=shop`;
+    var searchTypeNews = `${directLink12}&tbm=nws`;
+
+    document.getElementById('finalLink12').innerHTML = `
+    <strong><a href='${directLink12}' target='_blank'>Regular Google Search</a></strong><br><br>
+    <a href='${searchTypeImage}' target='_blank'>Google Image Search</a><br><br>
+    <a href='${searchTypeVideos}' target='_blank'>Google Videos Search</a><br><br>
+    <a href='${searchTypeShopping}' target='_blank'>Google Shopping Search</a><br><br>
+    <a href='${searchTypeNews}' target='_blank'>Google News Search</a>
+    `;
 
     document.getElementById("textInput12").value = "";
-};
-
-function copyToClipboard12()
-{
-    let text12 = document.getElementById('finalLink12').innerText;
-    event.preventDefault();
-    navigator.clipboard.writeText(text12);
 }
 
 // Singapore (1)
