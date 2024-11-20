@@ -445,7 +445,7 @@
 
 <div class="header-section">
     <div class="container text-center">
-    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from Toronto, Canada</span></b></h6>
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from Canada</span></b></h6>
     </br>
     <img src="images/ca-3.png" style="width:402px;height:206px;"></a></br>
     </br>
@@ -487,6 +487,56 @@
                       
 <div class="result-container mt-4">
     <p class="alert alert-success" id="finalLink70">Nothing to show</p>
+    </div>
+
+    <hr/>
+
+<!-- Canada (3) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results as if the search was conducted from Canada</span></b></h6>
+    </br>
+    <img src="images/ca-1.png" style="width:402px;height:206px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput67"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput67">
+    </div>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output67" onclick="URLEncode67(), getInputValue67()">Generate Link</button>
+    </form>
+                    
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink67">Nothing to show</p>
+    </div>
+
+    <hr/>
+
+<!-- Canada (4) -->
+
+<div class="header-section">
+    <div class="container text-center">
+    <h6><b><span style='background:rgb(205, 217, 236);mso-highlight:rgb(205, 217, 236)'>Generate Google Search Results limited to websites from Canada</span></b></h6>
+    </br>
+    <img src="images/ca-2.png" style="width:402px;height:310px;"></a></br>
+    </br>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="textInput68"><b><span style='background:yellow;mso-highlight:yellow'>Search:</span></b></label>
+    <input type="text" class="form-control" id="textInput68">
+    </div>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="button" id="output68" onclick="URLEncode68(), getInputValue68()">Generate Link</button>
+    </form>
+                    
+<div class="result-container mt-4">
+    <p class="alert alert-success" id="finalLink68">Nothing to show</p>
     </div>
 
     <hr/>
@@ -3599,6 +3649,92 @@ function getInputValue70() {
   `;
 
   document.getElementById("textInput70").value = "";
+}
+
+// Canada (3)
+
+function URLEncode67() {
+  var plaintext = document.getElementById('textInput67').value;
+
+  // URL Encoding (Percent Encoding) the Query String part of the full URL using encodeURIComponent
+  var encoded = encodeURIComponent(plaintext)
+  .replace(/%20/g, '+') // Convert %20 to + (For application/x-www-form-urlencoded, spaces are to be replaced by +) ----- If URL Encoding Desired, delete this line
+  .replace(/-/g, '-') // Convert - to - (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/-/g, '%2D')
+  .replace(/_/g, '_') // Convert _ to _ (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/_/g, '%5F')
+  .replace(/\./g, '.') // Convert . to . (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/\./g, '%2E')
+  .replace(/!/g, '%21') // Convert ! to %21
+  .replace(/~/g, '~') // Convert ~ to ~ (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/~/g, '%7E')
+  .replace(/\*/g, '%2A') // Convert * to %2A
+  .replace(/'/g, '%27') // Convert ' to %27
+  .replace(/\(/g, '%28') // Convert ( to %28
+  .replace(/\)/g, '%29'); // Convert ) to %29
+
+  document.getElementById('textInput67').value = encoded;
+  document.getElementById('textInput67').select();
+  return false;
+};
+
+function getInputValue67() {
+  let directLink67 = 'https://www.google.com/search?q=' + document.getElementById('textInput67').value + '&uule=w+CAIQICIXRWRtb250b24sQWxiZXJ0YSxDYW5hZGE&gl=ca';
+  generatedLink67 = directLink67; // Store the link in the global variable
+
+  var searchTypeImage = `${directLink67}&tbm=isch`;
+  var searchTypeVideos = `${directLink67}&tbm=vid`;
+  var searchTypeShopping = `${directLink67}&tbm=shop`;
+  var searchTypeNews = `${directLink67}&tbm=nws`;
+
+  document.getElementById('finalLink67').innerHTML = `
+  <strong><a href='${directLink67}' target='_blank'>Regular Google Search</a></strong><br><br>
+  <a href='${searchTypeImage}' target='_blank'>Google Image Search</a><br><br>
+  <a href='${searchTypeVideos}' target='_blank'>Google Videos Search</a><br><br>
+  <a href='${searchTypeShopping}' target='_blank'>Google Shopping Search</a><br><br>
+  <a href='${searchTypeNews}' target='_blank'>Google News Search</a>
+  `;
+
+  document.getElementById("textInput67").value = "";
+}
+
+// Canada (4)
+
+function URLEncode68() {
+  var plaintext = document.getElementById('textInput68').value;
+
+  // URL Encoding (Percent Encoding) the Query String part of the full URL using encodeURIComponent
+  var encoded = encodeURIComponent(plaintext)
+  .replace(/%20/g, '+') // Convert %20 to + (For application/x-www-form-urlencoded, spaces are to be replaced by +) ----- If URL Encoding Desired, delete this line
+  .replace(/-/g, '-') // Convert - to - (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/-/g, '%2D')
+  .replace(/_/g, '_') // Convert _ to _ (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/_/g, '%5F')
+  .replace(/\./g, '.') // Convert . to . (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/\./g, '%2E')
+  .replace(/!/g, '%21') // Convert ! to %21
+  .replace(/~/g, '~') // Convert ~ to ~ (Do Nothing) ----- If URL Encoding Desired, change to: .replace(/~/g, '%7E')
+  .replace(/\*/g, '%2A') // Convert * to %2A
+  .replace(/'/g, '%27') // Convert ' to %27
+  .replace(/\(/g, '%28') // Convert ( to %28
+  .replace(/\)/g, '%29'); // Convert ) to %29
+
+  document.getElementById('textInput68').value = encoded;
+  document.getElementById('textInput68').select();
+  return false;
+};
+
+function getInputValue68() {
+  let directLink68 = 'https://www.google.com/search?q=' + document.getElementById('textInput68').value + '&uule=w+CAIQICIXRWRtb250b24sQWxiZXJ0YSxDYW5hZGE&gl=ca&cr=countryCA';
+  generatedLink68 = directLink68; // Store the link in the global variable
+
+  var searchTypeImage = `${directLink68}&tbm=isch`;
+  var searchTypeVideos = `${directLink68}&tbm=vid`;
+  var searchTypeShopping = `${directLink68}&tbm=shop`;
+  var searchTypeNews = `${directLink68}&tbm=nws`;
+
+  document.getElementById('finalLink68').innerHTML = `
+  <strong><a href='${directLink68}' target='_blank'>Regular Google Search</a></strong><br><br>
+  <a href='${searchTypeImage}' target='_blank'>Google Image Search</a><br><br>
+  <a href='${searchTypeVideos}' target='_blank'>Google Videos Search</a><br><br>
+  <a href='${searchTypeShopping}' target='_blank'>Google Shopping Search</a><br><br>
+  <a href='${searchTypeNews}' target='_blank'>Google News Search</a>
+  `;
+
+  document.getElementById("textInput68").value = "";
 }
 
 </script>
