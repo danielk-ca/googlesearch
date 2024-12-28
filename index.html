@@ -1199,6 +1199,7 @@ document.getElementById('output1').addEventListener('click', function () {
 
         let directLink1 = 'https://www.google.com/search?q=' + queryString + '&uule=w+CAIQICIfTmV3IFlvcmssTmV3IFlvcmssVW5pdGVkIFN0YXRlcw&gl=us&safe=off';
         let directLink2 = 'https://www.google.com/search?q=' + queryString + '&uule=w+CAIQICIfTmV3IFlvcmssTmV3IFlvcmssVW5pdGVkIFN0YXRlcw&gl=us&cr=countryUS&safe=off';
+        let directLink3 = 'https://www.youtube.com/results?search_query=' + queryString + '&persist_gl=1&gl=US';
 
         var page1 = `${directLink1}`;
         var page2 = `${directLink1}&start=10`;
@@ -1248,7 +1249,8 @@ document.getElementById('output1').addEventListener('click', function () {
         <a href='${searchTypeImage}' target='_blank'>Google Image Search</a><br><br>
         <a href='${searchTypeVideos}' target='_blank'>Google Videos Search</a><br><br>
         <a href='${searchTypeShopping}' target='_blank'>Google Shopping Search</a><br><br>
-        <a href='${searchTypeNews}' target='_blank'>Google News Search</a><br>
+        <a href='${searchTypeNews}' target='_blank'>Google News Search</a><br><br>
+        <a href='${directLink3}' target='_blank'>YouTube</a><br>
         `;
 
         // Populate Section 2
